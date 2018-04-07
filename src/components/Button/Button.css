@@ -1,0 +1,28 @@
+$borderColor: #a5a5a5;
+$buttonPadding: 12px;
+.btn {
+  padding: 0.75em 1.25em;
+  border: 1px solid ;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-weight: 500;
+  outline: none;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+  text-decoration: none;
+  font-style: normal;
+  border-radius: 0;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s;
+  }
+}
