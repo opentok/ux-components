@@ -7,7 +7,7 @@ import * as styles from './Button.css';
 export interface IButtonPropTypes {
   onClick?: React.MouseEventHandler<any>;
   label: string;
-  children?: ReactNode[];
+  children?: ReactNode[] | string;
   kind?: 'link' | 'action';
   style?: { [key: string]: string };
   href?: string;
@@ -15,7 +15,7 @@ export interface IButtonPropTypes {
   className?: string;
 }
 
-export const Button = ({
+function Button({
   onClick,
   label,
   children,
@@ -24,7 +24,7 @@ export const Button = ({
   href,
   target,
   className,
-}: IButtonPropTypes): JSX.Element => {
+}: IButtonPropTypes) {
   const text = label || children;
   const kindStyle = styles[kind] || '';
   const classes = className || '';
@@ -48,4 +48,6 @@ export const Button = ({
       <div>{text}</div>
     </button>
   );
-};
+}
+
+export default Button;

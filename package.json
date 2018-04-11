@@ -1,7 +1,7 @@
 {
   "name": "opentok-react-components",
   "version": "0.0.1",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "repository": "git@github.com:adrice727/react-components.git",
   "author": "Aaron Rice <adrice727@gmail.com>",
@@ -36,7 +36,7 @@
     "webpack-cli": "^2.0.14",
     "webpack-node-externals": "^1.7.2"
   },
-  "peerDependencies": {
+  "dependencies": {
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2"
