@@ -1,9 +1,8 @@
 {
-  "name": "opentok-react-components",
+  "name": "throwaway-react-components",
   "version": "0.0.1",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "repository": "git@github.com:adrice727/react-components.git",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Aaron Rice <adrice727@gmail.com>",
   "license": "MIT",
   "private": false,

@@ -1,5 +1,6 @@
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -16,8 +17,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [{
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
             loader: 'typings-for-css-modules-loader',
             options: {
               modules: true,
@@ -26,9 +28,8 @@ module.exports = {
               localIdentName: '[name]__[local]'
             }
           },
-          "postcss-loader"
-          ]
-        })
+          'postcss-loader'
+        ]
       },
       {
         test: /\.(jpg|png|gif|svg)$/,
@@ -44,7 +45,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("style.css"),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
   ],
   devtool: "source-map",
   resolve: {

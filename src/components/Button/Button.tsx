@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
-import 'react-dom';
 import { Link } from 'react-router-dom';
 import * as styles from './Button.css';
 
@@ -15,7 +14,7 @@ export interface IButtonPropTypes {
   className?: string;
 }
 
-function Button({
+export default function Button({
   onClick,
   label,
   children,
@@ -49,5 +48,3 @@ function Button({
     </button>
   );
 }
-
-export default Button;
