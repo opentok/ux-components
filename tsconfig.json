@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "outDir": "build/dist",
-    "module": "commonjs",
+    // "outFile": "./dist/",
+    "allowSyntheticDefaultImports": true,
+    "module": "es2015",
     "target": "es5",
     "lib": ["es6", "dom"],
     "sourceMap": true,
@@ -9,22 +10,26 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
+    "outDir": "dist",
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "strictNullChecks": true,
     "declaration": true,
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "node_modules",
     "build",
+    "dist",
     "scripts",
     "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts"
-  ],
-  "types": [
-    "typePatches"
+    "src/setupTests.ts",
+    "**/*/*.test.ts",
+    "examples"
   ]
 }

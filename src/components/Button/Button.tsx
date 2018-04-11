@@ -4,19 +4,27 @@ import 'react-dom';
 import { Link } from 'react-router-dom';
 import * as styles from './Button.css';
 
-
-export interface ButtonPropTypes {
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+export interface IButtonPropTypes {
+  onClick?: React.MouseEventHandler<any>;
   label: string;
   children?: ReactNode[];
-  kind: 'link' | 'action';
+  kind?: 'link' | 'action';
   style?: { [key: string]: string };
   href?: string;
   target?: string;
   className?: string;
 }
 
-export default function Button({ onClick, label, children, kind, style = {}, href, target, className }: ButtonPropTypes): JSX.Element {
+export const Button = ({
+  onClick,
+  label,
+  children,
+  kind = 'action',
+  style = {},
+  href,
+  target,
+  className,
+}: IButtonPropTypes): JSX.Element => {
   const text = label || children;
   const kindStyle = styles[kind] || '';
   const classes = className || '';
@@ -40,6 +48,4 @@ export default function Button({ onClick, label, children, kind, style = {}, hre
       <div>{text}</div>
     </button>
   );
-}
-
-
+};

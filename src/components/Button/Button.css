@@ -26,3 +26,7 @@ $buttonPadding: 12px;
     transition: all 0.3s;
   }
 }
+
+.link, .action {
+  background: blue;
+}
