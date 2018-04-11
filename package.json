@@ -36,7 +36,7 @@
     "webpack-cli": "^2.0.14",
     "webpack-node-externals": "^1.7.2"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2"
