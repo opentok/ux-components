@@ -1,6 +1,6 @@
 {
   "name": "throwaway-react-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Aaron Rice <adrice727@gmail.com>",
