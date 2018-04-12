@@ -29,6 +29,7 @@
     "jest",
     "src/setupTests.ts",
     "**/*/*.test.ts",
-    "examples"
+    "examples",
+    "stories"
   ]
 }

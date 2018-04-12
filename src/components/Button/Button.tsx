@@ -41,9 +41,8 @@ export default function Button({
       </Link>
     );
   }
-
   return (
-    <button className={`${style.btn} ${kindStyle}`} onClick={onClick} style={style}>
+    <button className={`btn ${style.btn} ${kindStyle}`} onClick={onClick} style={style}>
       <div>{text}</div>
     </button>
   );
