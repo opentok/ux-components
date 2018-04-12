@@ -1,8 +1,6 @@
-$borderColor: #a5a5a5;
-$buttonPadding: 12px;
 .btn {
   padding: 0.75em 1.25em;
-  border: 1px solid $borderColor;
+  border: 1px solid grey;
   font-family: inherit;
   font-size: inherit;
   color: inherit;

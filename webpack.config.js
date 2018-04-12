@@ -13,7 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader"
+        loader: "awesome-typescript-loader",
       },
       {
         test: /\.css$/,
@@ -28,7 +28,14 @@ module.exports = {
               localIdentName: '[name]__[local]'
             }
           },
-          'postcss-loader'
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: './postcss.config.js'
+              }
+            }
+          }
         ]
       },
       {
