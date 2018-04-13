@@ -1,10 +1,9 @@
 module.exports = {
     modules: true,
     plugins: [
-        require("stylelint")({}),
-        require('precss'),
-        require('postcss-simple-vars'),
+        require("stylelint"),
         require('autoprefixer'),
-        require('postcss-nested'),
+        require('precss'),
+        require('postcss-nested')
     ]
 }

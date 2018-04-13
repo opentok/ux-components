@@ -30,6 +30,5 @@
     "src/setupTests.ts",
     "**/*/*.test.ts",
     "examples",
-    "stories"
   ]
 }

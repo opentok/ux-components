@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "module": "es2015",
     "target": "es5",
@@ -17,7 +18,8 @@
     "declaration": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "stories/**/*"
   ],
   "exclude": [
     "node_modules",

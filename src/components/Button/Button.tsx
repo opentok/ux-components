@@ -30,7 +30,7 @@ export default function Button({
   if (href) {
     return (
       <Link
-        className={`${style.btn} ${kindStyle} ${classes}`}
+        className={`${styles.btn} ${kindStyle} ${classes}`}
         to={href}
         target={target}
         onClick={onClick}
@@ -42,7 +42,7 @@ export default function Button({
     );
   }
   return (
-    <button className={`btn ${style.btn} ${kindStyle}`} onClick={onClick} style={style}>
+    <button className={`${styles.btn} ${kindStyle}`} onClick={onClick} style={style}>
       <div>{text}</div>
     </button>
   );

@@ -8,5 +8,5 @@ import Button from '../components/Button';
 
 storiesOf('Button', module)
   .add('action', () => (
-    <Button kind="action" label="hello" onClick={() => null} />
+    <Button kind="link" label="hello tim" onClick={() => null} />
   ));

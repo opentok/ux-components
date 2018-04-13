@@ -20,7 +20,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'typings-for-css-modules-loader',
+            loader: require.resolve('typings-for-css-modules-loader'),
             options: {
               modules: true,
               namedExport: true,
@@ -29,7 +29,7 @@ module.exports = {
             }
           },
           {
-            loader: 'postcss-loader',
+            loader: require.resolve('postcss-loader'),
             options: {
               config: {
                 path: './postcss.config.js'
