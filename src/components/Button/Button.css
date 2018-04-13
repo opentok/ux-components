@@ -1,8 +1,8 @@
 $tbBlue: #0099cb;
 .btn {
+  font-family: 'Raleway', sans-serif;
   padding: 0.75em 1.25em;
   border: 1px solid grey;
-  font-family: inherit;
   font-size: inherit;
   color: inherit;
   cursor: pointer;
@@ -20,8 +20,7 @@ $tbBlue: #0099cb;
 }
 
 .action {
-  background-color: #007ba3;
-  box-shadow: 0 0 0 2px $tbBlue;
+  background-color: #0099cb;
 }
 
 .link {

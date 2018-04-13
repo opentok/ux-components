@@ -4,6 +4,15 @@ module.exports = {
         require("stylelint"),
         require('autoprefixer'),
         require('precss'),
-        require('postcss-nested')
+        require('postcss-nested'),
+        require('postcss-font-magician')({
+            variants: {
+                'Raleway': {
+                    '300': [],
+                    '400': [],
+                    '700': []
+                }
+            }
+        })
     ]
 }
