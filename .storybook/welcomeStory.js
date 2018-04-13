@@ -1,15 +1,17 @@
-import React from "react";
+import React from 'react';
+import { storiesOf, setAddon } from '@storybook/react';
+import { wInfo } from './utils';
+import JSXAddon from 'storybook-addon-jsx';
 
-import { storiesOf } from "@storybook/react";
-import { wInfo } from "./utils";
+setAddon(JSXAddon);
 
-storiesOf("Welcome", module).addWithJSX(
-  "to your new Storybook 🎊",
+storiesOf('Welcome', module).addWithJSX(
+  'Opentok Components Storybook ✳️',
   wInfo(`
 
     ### Notes
 
-    Hello world!:
+    Components are built with TypeScript, PostCSS, CSSModules, and CSSNext.
 
     ### Usage
     ~~~js

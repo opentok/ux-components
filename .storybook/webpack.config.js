@@ -6,71 +6,21 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const SRC_PATH = path.join(__dirname, '../src');
 const STORIES_PATH = path.join(__dirname, '../stories');
 
-// module.exports = (baseConfig, env, defaultConfig) => {
-//   defaultConfig.module.rules.push({
-//     test: /\.(ts|tsx)$/,
-//     include: [SRC_PATH, STORIES_PATH],
-//     use: [{
-//       loader: "awesome-typescript-loader",
-//     }],
-//   });
-//   defaultConfig.module.rules.push({
-//     test: /\.css$/,
-//     include: [SRC_PATH],
-//     use: [
-//       MiniCssExtractPlugin.loader,
-//       {
-//         loader: require.resolve('css-loader'),
-//         options: {
-//           modules: true,
-//           importLoaders: 1,
-//           localIdentName: '[name]__[local]'
-//         }
-//       },
-//       {
-//         loader: require.resolve('postcss-loader'),
-//         options: {
-//           config: {
-//             path: path.resolve(__dirname, './postcss.config.js')
-//           }
-//         }
-//       }
-//     ]
-//   });
-//   defaultConfig.plugins.push(new TSDocgenPlugin());
-//   defaultConfig.plugins.push(new MiniCssExtractPlugin({
-//     filename: "[name].css",
-//     chunkFilename: "[id].css"
-//   }));
-//   defaultConfig.resolve.plugins = [(
-//     new TsconfigPathsPlugin({
-//       configFile: path.resolve(__dirname, '../.storybook/tsconfig.json'),
-//     })
-//   )];
-//   defaultConfig.resolve.extensions.push(".js", ".ts", ".tsx", ".css");
-//   return defaultConfig;
-// };
-
-// const path = require("path");
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 module.exports = {
-  // entry: "./src/index.ts",
-  // output: {
-  //   path: path.resolve(__dirname, "dist"),
-  //   filename: "index.js"
-  // },
-  // mode: "development",
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
         include: [SRC_PATH, STORIES_PATH],
-        options: {
-          configFileName: './.storybook/tsconfig.json'
-        }
+        use: [
+          {
+            loader: require.resolve('awesome-typescript-loader'),
+            options: {
+              configFileName: './.storybook/tsconfig.json'
+            }
+          },
+          { loader: require.resolve('react-docgen-typescript-loader') }
+        ]
       },
       {
         test: /\.css$/,
@@ -112,7 +62,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
+    new TSDocgenPlugin()
   ],
   devtool: "source-map",
   resolve: {

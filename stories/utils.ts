@@ -1,7 +1,7 @@
 import React from 'react';
 import addonInfo from '@storybook/addon-info';
 import { withInfo } from '@storybook/addon-info';
-const styles = {
+export const styles = {
   header: {
     h1: {
       marginRight: "20px",
@@ -23,4 +23,4 @@ const styles = {
     lineHeight: "2"
   }
 };
-export const wInfo = (text: string) => withInfo({ inline: true, source: false, styles, text });
+export const wInfo = (text: string) => withInfo({ inline: false, source: true, styles, text, header: true });
