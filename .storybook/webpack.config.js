@@ -1,18 +1,23 @@
 const path = require("path");
 const TSDocgenPlugin = require("react-docgen-typescript-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const SRC_PATH = path.join(__dirname, '../src');
 const STORIES_PATH = path.join(__dirname, '../stories');
+
 module.exports = (baseConfig, env, defaultConfig) => {
   defaultConfig.module.rules.push({
     test: /\.(ts|tsx)$/,
     include: [SRC_PATH, STORIES_PATH],
-    loader: require.resolve("awesome-typescript-loader")
+    use: [{
+      loader: "awesome-typescript-loader",
+    }],
   },
   {
     test: /\.css$/,
+    include: [SRC_PATH],
     use: [
-      { loader: 'style-loader' },
+      MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',
         options: {
@@ -32,7 +37,11 @@ module.exports = (baseConfig, env, defaultConfig) => {
     ]
   });
   defaultConfig.plugins.push(
-    new TSDocgenPlugin()
+    new TSDocgenPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
   );
   defaultConfig.resolve.extensions.push(".js", ".ts", ".tsx", ".css");
   return defaultConfig;

@@ -16,15 +16,8 @@
   font-style: normal;
   border-radius: 0;
   background: orange;
-
-  /* &:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    transition: all 0.3s;
-  } */
 }
 
-.action {
+.action, .link {
   background: blue;
 }
