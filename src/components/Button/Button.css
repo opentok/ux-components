@@ -1,4 +1,4 @@
-$blue: blue;
+$tbBlue: #0099cb;
 .btn {
   padding: 0.75em 1.25em;
   border: 1px solid grey;
@@ -16,14 +16,12 @@ $blue: blue;
   text-decoration: none;
   font-style: normal;
   border-radius: 0;
-  background: orange;
 
 }
 
-$blue: blue;
-
 .action {
-  background: $blue;
+  background-color: #007ba3;
+  box-shadow: 0 0 0 2px $tbBlue;
 }
 
 .link {
