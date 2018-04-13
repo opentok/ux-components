@@ -9,7 +9,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
-    "outDir": "dist",
+    "outDir": "temp-stories",
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
@@ -30,5 +30,6 @@
     "src/setupTests.ts",
     "**/*/*.test.ts",
     "examples",
+    "stories"
   ]
 }

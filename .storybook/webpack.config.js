@@ -67,9 +67,14 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader",
+        include: [SRC_PATH, STORIES_PATH],
+        options: {
+          configFileName: './.storybook/tsconfig.json'
+        }
       },
       {
         test: /\.css$/,
+        include: [SRC_PATH],
         use: [
           MiniCssExtractPlugin.loader,
           {

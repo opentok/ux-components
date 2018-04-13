@@ -25,7 +25,7 @@ setAddon(JSXAddon);
 
 function loadStories() {
     require('./welcomeStory');
-    require('../src/stories');
+    require('../stories');
 }
 
 configure(loadStories, module);
