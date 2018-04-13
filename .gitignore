@@ -61,3 +61,7 @@ typings/
 dist
 .cache
 index.d.ts
+
+#storybook
+storybook-static
+.storybook/dist

@@ -1,10 +1,10 @@
+$tbBlue: #0099cb;
 .btn {
+  font-family: 'Raleway', sans-serif;
   padding: 0.75em 1.25em;
-  border: 1px solid grey;
-  font-family: inherit;
+  border: none;
   font-size: inherit;
   color: inherit;
-  background: none;
   cursor: pointer;
   display: inline-block;
   letter-spacing: 1px;
@@ -15,16 +15,14 @@
   transition: all 0.3s;
   text-decoration: none;
   font-style: normal;
-  border-radius: 0;
-
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    transition: all 0.3s;
-  }
+  border-radius: 2px;
 }
 
-.link, .action {
-  background: blue;
+.action {
+  background-color: $tbBlue;
+  color: white;
+}
+
+.link {
+  background: lightgrey;
 }

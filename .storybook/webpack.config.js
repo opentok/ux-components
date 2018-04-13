@@ -1,30 +1,37 @@
 const path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const TSDocgenPlugin = require("react-docgen-typescript-webpack-plugin");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const SRC_PATH = path.join(__dirname, '../src');
+const STORIES_PATH = path.join(__dirname, '../stories');
+
 module.exports = {
-  entry: "./src/index.ts",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "index.js"
-  },
-  mode: "development",
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
+        include: [SRC_PATH, STORIES_PATH],
+        use: [
+          {
+            loader: require.resolve('awesome-typescript-loader'),
+            options: {
+              configFileName: './.storybook/tsconfig.json'
+            }
+          },
+          { loader: require.resolve('react-docgen-typescript-loader') }
+        ]
       },
       {
         test: /\.css$/,
+        include: [SRC_PATH],
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: require.resolve('typings-for-css-modules-loader'),
+            loader: require.resolve('css-loader'),
             options: {
               modules: true,
-              namedExport: true,
-              banner: "/* This file is generated during the webpack build. Please do not edit/remove. */",
+              importLoaders: 1,
               localIdentName: '[name]__[local]'
             }
           },
@@ -55,10 +62,16 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
+    new TSDocgenPlugin()
   ],
   devtool: "source-map",
   resolve: {
-    extensions: [".js", ".ts", ".tsx", ".css"]
+    extensions: [".js", ".ts", ".tsx", ".css"],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, '../.storybook/tsconfig.json'),
+      })
+    ]
   }
 };

@@ -12,6 +12,7 @@ export interface IButtonPropTypes {
   href?: string;
   target?: string;
   className?: string;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -23,6 +24,7 @@ export default function Button({
   href,
   target,
   className,
+  disabled = false,
 }: IButtonPropTypes) {
   const text = label || children;
   const kindStyle = styles[kind] || '';
@@ -30,7 +32,7 @@ export default function Button({
   if (href) {
     return (
       <Link
-        className={`${style.btn} ${kindStyle} ${classes}`}
+        className={`${styles.btn} ${kindStyle} ${classes}`}
         to={href}
         target={target}
         onClick={onClick}
@@ -41,9 +43,8 @@ export default function Button({
       </Link>
     );
   }
-
   return (
-    <button className={`${style.btn} ${kindStyle}`} onClick={onClick} style={style}>
+    <button className={`${styles.btn} ${kindStyle}`} onClick={onClick} style={style} disabled={disabled}>
       <div>{text}</div>
     </button>
   );

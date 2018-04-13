@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "module": "es2015",
     "target": "es5",
@@ -8,8 +9,8 @@
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
-    "outDir": "temp-stories",
+    "rootDir": "../",
+    "outDir": "dist",
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
@@ -17,7 +18,8 @@
     "declaration": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "stories/**/*"
   ],
   "exclude": [
     "node_modules",
@@ -29,7 +31,6 @@
     "jest",
     "src/setupTests.ts",
     "**/*/*.test.ts",
-    "examples",
-    "stories"
+    "examples"
   ]
 }
