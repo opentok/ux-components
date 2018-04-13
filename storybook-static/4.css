@@ -4,7 +4,6 @@
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  background: none;
   cursor: pointer;
   display: inline-block;
   letter-spacing: 1px;
@@ -16,13 +15,7 @@
   text-decoration: none;
   font-style: normal;
   border-radius: 0;
-
-  /* &:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    transition: all 0.3s;
-  } */
+  background: orange;
 }
 
 .Button__action {
