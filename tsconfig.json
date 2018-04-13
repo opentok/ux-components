@@ -9,7 +9,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
-    "outDir": "temp-stories",
+    "outDir": "dist",
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
