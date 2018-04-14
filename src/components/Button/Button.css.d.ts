@@ -2,3 +2,4 @@
 export const btn: string;
 export const action: string;
 export const link: string;
+export const soft: string;

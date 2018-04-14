@@ -28,10 +28,11 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: require.resolve('css-loader'),
+            loader: require.resolve('typings-for-css-modules-loader'),
             options: {
               modules: true,
-              importLoaders: 1,
+              namedExport: true,
+              banner: "/* This file is generated during the webpack build. Please do not edit/remove. */",
               localIdentName: '[name]__[local]'
             }
           },

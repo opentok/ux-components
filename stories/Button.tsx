@@ -5,16 +5,15 @@ import { wInfo, styles } from "./utils";
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '../src';
 
-
 addDecorator(withKnobs);
 
 const stories = storiesOf('Button', module);
-
 const info = withInfo({ inline: false, source: true, styles, text: 'Kinds' });
 
 stories.add('Kinds', info(() => {
   const name = text('Label', 'Click me');
-  const kind = select('Kind', { action: 'action', link: 'link' }, 'action');
+  const kinds =  { action: 'action', link: 'link', soft: 'soft' };
+  const kind = select('Kind', kinds, 'action');
   return <Button kind={kind} label={name} onClick={() => alert('hello there')} />
 }));
 

@@ -7,7 +7,7 @@ export interface IButtonPropTypes {
   onClick?: React.MouseEventHandler<any>;
   label: string;
   children?: ReactNode[] | string;
-  kind?: 'link' | 'action';
+  kind?: 'link' | 'action' | 'soft';
   style?: { [key: string]: string };
   href?: string;
   target?: string;

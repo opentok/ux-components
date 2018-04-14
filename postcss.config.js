@@ -1,11 +1,11 @@
 module.exports = {
-    modules: true,
-    plugins: [
-        require("stylelint"),
-        require('autoprefixer'),
-        require('precss'),
-        require('postcss-nested'),
-        require('postcss-font-magician')({
+    plugins: {
+        'postcss-import': {},
+        'postcss-cssnext': {},
+        'stylelint': {},
+        'precss': {},
+        'postcss-nested': {},
+        'postcss-font-magician': {
             variants: {
                 'Raleway': {
                     '300': [],
@@ -13,6 +13,6 @@ module.exports = {
                     '700': []
                 }
             }
-        })
-    ]
+        },
+    }
 }
