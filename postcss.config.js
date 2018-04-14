@@ -1,10 +1,16 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
-    'postcss-cssnext': {},
+    'postcss-mixins': {},
+    'postcss-simple-vars': {},
+    'autoprefixer': {},
+    'postcss-assets': {
+      basePath: './src',
+      loadPaths: ['**']
+    },
+    'postcss-nested': {},
     'stylelint': {},
     'precss': {},
-    'postcss-nested': {},
     'postcss-font-magician': {
       foundries: ['google'],
       variants: {
@@ -17,6 +23,6 @@ module.exports = {
           '400': [],
         }
       },
-    },
+    }
   }
 }

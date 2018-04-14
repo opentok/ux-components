@@ -68,7 +68,7 @@ module.exports = {
   ],
   devtool: "source-map",
   resolve: {
-    extensions: [".js", ".ts", ".tsx", ".css"],
+    extensions: [".js", ".ts", ".tsx", ".css", "png", ".svg", "jpg"],
     plugins: [
       new TsconfigPathsPlugin({
         configFile: path.resolve(__dirname, '../.storybook/tsconfig.json'),

@@ -7,7 +7,8 @@ export interface IButtonPropTypes {
   onClick?: React.MouseEventHandler<any>;
   label: string;
   children?: ReactNode[] | string;
-  kind?: 'link' | 'action' | 'soft';
+  kind?: 'primary'| 'secondary' | 'soft';
+  callToAction?: boolean;
   style?: { [key: string]: string };
   href?: string;
   target?: string;
@@ -19,7 +20,8 @@ export default function Button({
   onClick,
   label,
   children,
-  kind = 'action',
+  kind = 'primary',
+  callToAction = false,
   style = {},
   href,
   target,
@@ -29,10 +31,11 @@ export default function Button({
   const text = label || children;
   const kindStyle = styles[kind] || '';
   const classes = className || '';
+  const cta = callToAction ? styles.cta : '';
   if (href) {
     return (
       <Link
-        className={`${styles.btn} ${kindStyle} ${classes}`}
+        className={`${styles.btn} ${kindStyle} ${classes} ${cta}`}
         to={href}
         target={target}
         onClick={onClick}
@@ -44,7 +47,7 @@ export default function Button({
     );
   }
   return (
-    <button className={`${styles.btn} ${kindStyle}`} onClick={onClick} style={style} disabled={disabled}>
+    <button className={`${styles.btn} ${kindStyle} ${cta}`} onClick={onClick} style={style} disabled={disabled}>
       <div>{text}</div>
     </button>
   );

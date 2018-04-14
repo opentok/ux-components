@@ -1,13 +1,16 @@
-/* $tbBlue: #0099cb; */
 @import "../../styles/colors.css";
+@import "../../styles/icons.css";
+
 .btn {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Raleway', sans-serif;
   padding: 0.75em 1.25em;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: inherit;
   color: inherit;
   cursor: pointer;
-  display: inline-block;
   letter-spacing: 1px;
   font-weight: 500;
   outline: none;
@@ -19,22 +22,35 @@
   border-radius: 2px;
 }
 
-.action {
-  background-color: var(--color-tbblue);
+.primary {
+  background-color: $tbBlue;
   color: white;
+  &.cta {
+    @mixin cta-icon white;
+  }
   &:hover {
-    background-color: var(--color-lighter-tbblue);
+    background-color: $lighterTbBlue
   }
 }
 
-.link {
-  background: var(--color-tim);
+
+.secondary {
+  background: $lightGrey;
+  &:hover {
+    background-color: color-mod($lightGrey tint(10%));
+  }
+  &.cta {
+    @mixin cta-icon gray;
+  }
 }
 
 .soft {
-  background: var(--color-offwhite);
+  background: $offWhite;
   border: 1px solid black;
   &:hover {
-    background: var(--color-darkerwhite);
+    background: $darkerWhite;
+  }
+  &.cta {
+    @mixin cta-icon gray;
   }
 }
