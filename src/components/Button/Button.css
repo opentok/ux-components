@@ -1,0 +1,40 @@
+/* $tbBlue: #0099cb; */
+@import "../../styles/colors.css";
+.btn {
+  font-family: 'Pacifico', cursive;
+  padding: 0.75em 1.25em;
+  border: none;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-weight: 500;
+  outline: none;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+  text-decoration: none;
+  font-style: normal;
+  border-radius: 2px;
+}
+
+.action {
+  background-color: var(--color-tbblue);
+  color: white;
+  &:hover {
+    background-color: var(--color-lighter-tbblue);
+  }
+}
+
+.link {
+  background: var(--color-tim);
+}
+
+.soft {
+  background: var(--color-offwhite);
+  border: 1px solid black;
+  &:hover {
+    background: var(--color-darkerwhite);
+  }
+}

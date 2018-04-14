@@ -1,0 +1,9 @@
+:root {
+  --color-tbblue: #0099cb;
+  --color-blue: #32c7ff;
+  --color-lighter-tbblue: color(var(--color-tbblue) tint(10%));
+  --color-darker-tbblue: color(var(--color-tbblue) shade(10%));
+  --color-tim: papayawhip;
+  --color-offwhite: #f8f8f8;
+  --color-darkerwhite: color(var(--color-offwhite) shade(10%))
+}

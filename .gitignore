@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+# build
+dist
+.cache
+index.d.ts
+
+#storybook
+storybook-static
+.storybook/dist
