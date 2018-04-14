@@ -1,5 +1,6 @@
 /* This file is generated during the webpack build. Please do not edit/remove. */
 export const btn: string;
-export const action: string;
-export const link: string;
+export const primary: string;
+export const cta: string;
+export const secondary: string;
 export const soft: string;

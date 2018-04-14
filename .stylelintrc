@@ -1,6 +1,8 @@
 {
   "extends": "stylelint-config-recommended",
+  "syntax": "scss",
   "rules": {
-    "selector-nested-pattern": "^&"
+    "selector-nested-pattern": "^&",
+    "no-descending-specificity": true
   }
 }

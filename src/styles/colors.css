@@ -1,9 +1,26 @@
-:root {
-  --color-tbblue: #0099cb;
-  --color-blue: #32c7ff;
-  --color-lighter-tbblue: color(var(--color-tbblue) tint(10%));
-  --color-darker-tbblue: color(var(--color-tbblue) shade(10%));
-  --color-tim: papayawhip;
-  --color-offwhite: #f8f8f8;
-  --color-darkerwhite: color(var(--color-offwhite) shade(10%))
-}
+
+$blue: #32c7ff;
+$tbBlue: #0099cb;
+$lighterTbBlue: color-mod($tbBlue tint(10%));
+$darkerTbBlue: color-mod($tbBlue shade(10%));
+$tim: papayawhip;
+$offWhite: #f8f8f8;
+$darkerWhite: color-mod($offWhite shade(15%));
+$activeBlueMask: #E3F4F9;
+$activeBlue: #0099CC;
+$activeBlueShade: #007BA3;
+$positiveGreen: #1BA71B;
+$positiveGreenShade: #127412;
+$negativeRed: #D0021B;
+$negativeRedShade: #910112;
+$mediumGrey: #314048;
+$darkGrey: #293840;
+$darkerGrey: #1E292E;
+$lightGrey: #d6d6d6;
+$darkBlue: #003F5F;
+$bgGrey: #F0F0F0;
+$textGrey: #90A1A9;
+$navBlack: #1f1a17;
+$tbYellow: #f3a536;
+$tbPurple: #a25380;
+$paidGreen: #1ba71b;
