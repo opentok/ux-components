@@ -1,8 +1,7 @@
 @define-mixin cta-icon $color {
-  padding-left: 15px;
   &::after {
     content: "";
-    background-image: inline(../images/icons/ctaarrow-$(color).png);
+    background-image: inline(icons/ctaarrow-$(color).png);
     position: relative;
     display: inline-block;
     background-size: .5em;
