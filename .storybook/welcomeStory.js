@@ -6,12 +6,12 @@ import JSXAddon from 'storybook-addon-jsx';
 setAddon(JSXAddon);
 
 storiesOf('Welcome', module).addWithJSX(
-  'Opentok Components Storybook ✳️',
+  'OpenTok UX Components Storybook ✳️',
   wInfo(`
 
     ### Notes
 
-    Components are built with TypeScript, PostCSS, CSSModules, and CSSNext.
+    Components are built with TypeScript, React, and PostCSS.
 
     ### Usage
     ~~~js

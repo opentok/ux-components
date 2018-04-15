@@ -1,15 +1,15 @@
 
 ![logo](./tokbox-logo.png)
 
-# OpenTok React Components
+# UX Components
 [![license](https://img.shields.io/github/license/opentok/opentok-network-test-js.svg)](https://github.com/opentok/opentok-network-test-js/blob/master/CONTRIBUTING.md)
 
 
-OpenTok React Components are built with:
+OpenTok UX Components are built with:
 
  - [TypeScript](http://www.typescriptlang.org/)
+ - [React](https://reactjs.org/)
  - [PostCSS](https://github.com/postcss/postcss)
- - [CSSNext](http://cssnext.io/)
 
 You can preview components using [React Storybook](https://storybook.js.org/).  Due to a current [issue](https://github.com/yarnpkg/yarn/issues/4489) with `yarn`, it's recommended that you use `npm`.
 
