@@ -1,11 +1,32 @@
+/* https://flatuicolors.com/palette/in */
+$orchidOrange: #FEA47F;
+$spiroBlue: #25CCF7;
+$honeyGlow: #EAB543;
+$sweetGarden: #55E6C1;
+$fallingStar:#CAD3C8;
+$richGardenia: #F97F51;
+$clearChill: #1B9CFC;
+$whitePepper: #F8EFBA;
+$keppel: #58B19F;
+$shipsOfficer: #2C3A47;
+$fireyFuschia: #B33771;
+$bluebell: #B33771;
+$georgiaPeach: #FD7272;
+$oasisStream: #9AECDB;
+$brightUbe: #D6A2E8;
+$magenta: #6D214F;
+$navyBlue: #182C61;
+$sasquatchSocks: #FC427B;
+$pineGlade: #FC427B;
+$highligterLavender: #82589F;
 
-$blue: #32c7ff;
+
+/* $blue: #32c7ff;
 $tbBlue: #0099cb;
 $lighterTbBlue: color-mod($tbBlue tint(10%));
 $darkerTbBlue: color-mod($tbBlue shade(10%));
-$tim: papayawhip;
 $offWhite: #f8f8f8;
-$darkerWhite: color-mod($offWhite shade(15%));
+$darkerWhite: color-mod($offWhite shade(5%));
 $activeBlueMask: #E3F4F9;
 $activeBlue: #0099CC;
 $activeBlueShade: #007BA3;
@@ -14,13 +35,15 @@ $positiveGreenShade: #127412;
 $negativeRed: #D0021B;
 $negativeRedShade: #910112;
 $mediumGrey: #314048;
+$grey: grey;
+$lightGrey: color-mod($grey tint(20%));
+$lighterGrey: color-mod($grey tint(40%));
 $darkGrey: #293840;
 $darkerGrey: #1E292E;
-$lightGrey: #d6d6d6;
 $darkBlue: #003F5F;
 $bgGrey: #F0F0F0;
 $textGrey: #90A1A9;
 $navBlack: #1f1a17;
 $tbYellow: #f3a536;
 $tbPurple: #a25380;
-$paidGreen: #1ba71b;
+$paidGreen: #1ba71b; */
