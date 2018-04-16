@@ -1,6 +1,7 @@
 import React from 'react';
 import addonInfo from '@storybook/addon-info';
 import { withInfo } from '@storybook/addon-info';
+
 export const styles = {
   header: {
     h1: {
@@ -74,7 +75,7 @@ export const colorMap = {
   magenta: '#6D214F',
   navyBlue: '#182C61',
   sasquatchSocks: '#FC427B',
-  pineGlade: '#FC427B',
+  pineGlade: '#BDC581',
   highligterLavender: '#82589F',
 };
 
