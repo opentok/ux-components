@@ -6,7 +6,10 @@ module.exports = {
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.js"
+    filename: "index.js",
+    library: "opentok-ux-components",
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   mode: "development",
   module: {
