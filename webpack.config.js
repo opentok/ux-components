@@ -6,7 +6,10 @@ module.exports = {
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.js"
+    filename: "index.js",
+    library: "opentok-ux-components",
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   mode: "development",
   module: {
@@ -25,7 +28,7 @@ module.exports = {
               modules: true,
               namedExport: true,
               banner: "/* This file is generated during the webpack build. Please do not edit/remove. */",
-              localIdentName: '[name]__[local]'
+              localIdentName: 'ot_ux_[name]__[local]'
             }
           },
           {
@@ -53,7 +56,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "style.css",
       chunkFilename: "[id].css"
     })
   ],

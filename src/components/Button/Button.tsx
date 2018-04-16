@@ -12,9 +12,9 @@ export interface IButtonPropTypes {
   /** Which style should the button have */
   /** @default primary */
   kind?: 'primary'| 'secondary' | 'soft';
-  /** Include a call-to-action arrow? */
+  /** Include a Call-to-Action arrow? */
   /** @default false*/
-  callToAction?: boolean;
+  cta?: boolean;
   /** Additional styles to apply */
   style?: { [key: string]: string };
   /** Optional href is we want an <a /> or <Link /> */
@@ -35,7 +35,7 @@ export default function Button({
   onClick,
   text,
   kind = 'primary',
-  callToAction = false,
+  cta = false,
   style = {},
   href,
   link = false,
@@ -49,8 +49,8 @@ export default function Button({
   const classes = classNames(
     styles.btn,
     styles[kind] || '',
+    { [styles['cta']]: cta },
     className || '',
-    { [styles['callToAction']]: callToAction },
   )
   if (href) {
     if (link) {
