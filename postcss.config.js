@@ -14,16 +14,11 @@ module.exports = {
     'postcss-font-magician': {
       foundries: ['google'],
       variants: {
-        'Raleway': {
-          '300': [],
-          '400': [],
-          '700': []
-        },
         'Nunito': {
-          '200': [],
-          '300': [],
-          '400': [],
-          '700': []
+          '200': ['woff, woff2'],
+          '300': ['woff, woff2'],
+          '400': ['woff, woff2'],
+          '700': ['woff, woff2']
         }
       },
     }
