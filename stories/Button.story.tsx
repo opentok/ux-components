@@ -13,19 +13,19 @@ const info = withInfo({ inline: false, source: true, styles });
 stories.add('Primary', info(() => {
   const label = text('Text', 'Click me');
   const cta = boolean('Call to Action', false);
-  return <Button kind='primary' text={label} callToAction={cta} onClick={() => alert("I'm a button")} />
+  return <Button kind='primary' text={label} cta={cta} onClick={() => alert("I'm a button")} />
 }));
 
 stories.add('Secondary', info(() => {
   const label = text('Text', 'Click me');
   const cta = boolean('Call to Action', false);
-  return <Button kind='secondary' text={label} callToAction={cta} onClick={() => alert("I'm a button")} />
+  return <Button kind='secondary' text={label} cta={cta} onClick={() => alert("I'm a button")} />
 }));
 
 stories.add('Soft', info(() => {
   const label = text('Text', 'Click me');
   const cta = boolean('Call to Action', false);
-  return <Button kind='soft' text={label} callToAction={cta} onClick={() => alert("I'm a button")} />
+  return <Button kind='soft' text={label} cta={cta} onClick={() => alert("I'm a button")} />
 }));
 
 stories.add('Custom', info(() => {
@@ -62,7 +62,7 @@ stories.add('Custom', info(() => {
     border: border ? `1px solid ${borderColor}` : '',
     backgroundColor: customBackground || colorMap[selectBackground],
   };
-  return <Button text={label} callToAction={cta} style={style} />
+  return <Button text={label} cta={cta} style={style} />
 }));
 
 stories.add('Link', info(() => {
@@ -71,7 +71,7 @@ stories.add('Link', info(() => {
   const kinds = { primary: 'primary', secondary: 'secondary', soft: 'soft' };
   const kind = select('Kind', kinds, 'primary');
   const cta = boolean('Call to Action', false);
-  return <Button kind={kind} text={label} href={href} target="_blank" callToAction={cta} className={'tim'} />
+  return <Button kind={kind} text={label} href={href} target="_blank" cta={cta} className="timtam" />
 }));
 
 
