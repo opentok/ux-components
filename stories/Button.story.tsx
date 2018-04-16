@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs/react';
-import { wInfo, styles, colorMap } from "./utils";
+import { wInfo, styles, colorPalette, colorNames } from "./utils";
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '../src';
 
@@ -32,35 +32,15 @@ stories.add('Custom', info(() => {
   const label = text('Text', 'Customize me');
   const cta = boolean('Call to Action', false);
   const color = text('Text Color', 'white');
-  const selectBackground = select('Color Palette', {
-    orchidOrange: 'orchidOrange',
-    spiroBlue: 'spiroBlue',
-    honeyGlow: 'honeyGlow',
-    sweetGarden: 'sweetGarden',
-    fallingStar: 'fallingStar',
-    richGardenia: 'richGardenia',
-    clearChill: 'clearChill',
-    whitePepper: 'whitePepper',
-    keppel: 'keppel',
-    shipsOfficer: 'shipsOfficer',
-    fireyFuschia: 'fireyFuschia',
-    bluebell: 'bluebell',
-    georgiaPeach: 'georgiaPeach',
-    oasisStream: 'oasisStream',
-    brightUbe: 'brightUbe',
-    magenta: 'magenta',
-    navyBlue: 'navyBlue',
-    sasquatchSocks: 'sasquatchSocks',
-    pineGlade: 'pineGlade',
-    highligterLavender: 'highligterLavender',
-  }, 'spiroBlue');
+  console.log(colorNames)
+  const selectBackground = select('Color Palette', colorNames, 'spiroBlue');
   const customBackground = text('Custom Background', null);
   const border = boolean('Border', false);
   const borderColor = text('Border Color', 'darkgrey');
   const style = {
     color,
     border: border ? `1px solid ${borderColor}` : '',
-    backgroundColor: customBackground || colorMap[selectBackground],
+    backgroundColor: customBackground || colorPalette[selectBackground],
   };
   return <Button text={label} cta={cta} style={style} />
 }));

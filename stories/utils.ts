@@ -56,7 +56,7 @@ export const styles = {
   }
 };
 
-export const colorMap = {
+export const colorPalette = {
   orchidOrange: '#FEA47F',
   spiroBlue: '#25CCF7',
   honeyGlow: '#EAB543',
@@ -78,5 +78,7 @@ export const colorMap = {
   pineGlade: '#BDC581',
   highligterLavender: '#82589F',
 };
+
+export const colorNames = Object.keys(colorPalette).reduce((acc, color) => ({...acc, [color]: color }), {})
 
 export const wInfo = (text: string) => withInfo({ inline: false, source: true, styles, text, header: true });
