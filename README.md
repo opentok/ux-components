@@ -1,7 +1,7 @@
 
 ![logo](./tokbox-logo.png)
 
-# UX Components
+# OpenTok UX Components
 [![license](https://img.shields.io/github/license/opentok/opentok-network-test-js.svg)](https://github.com/opentok/opentok-network-test-js/blob/master/CONTRIBUTING.md)
 
 
@@ -20,3 +20,22 @@ $ npm run storybook
 You can view the storybook at `http://localhost:6006/`
 
 *If you get an error regarding type declarations for a `css` file, you may need to run `npm run watch` in a separate terminal tab.*
+
+Components are not yet available on `npm`, but you can test them in your own project by cloning the repo and then from the root directory:
+```bash
+ $ npm i
+ $ yarn link
+```
+Within the root of your own project's directory, run `yarn link opentok-react-components`.  Then you can import and use components as normal:
+```javascript
+import { Button } from 'opentok-ux-components';
+import 'opentok-ux-components/dist/style.css';
+
+ . . .
+
+  render() {
+	  <div>
+	    <Button text="hello" onClick={onClick} />
+	  </div>
+  }
+```
