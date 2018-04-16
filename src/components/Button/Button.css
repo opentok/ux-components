@@ -26,8 +26,8 @@
 }
 
 .primary {
-  background-color: $clearChill;
   color: white;
+  background-color: $clearChill;
   &.cta {
     @mixin cta-icon white;
   }
@@ -37,8 +37,8 @@
 }
 
 .secondary {
-  background-color: $shipsOfficer;
   color: white;
+  background-color: $shipsOfficer;
   &:hover {
     background-color: color-mod($shipsOfficer tint(10%));
   }
@@ -47,11 +47,22 @@
   }
 }
 
+.danger {
+  color: white;
+  background: color-mod($sasquatchSocks shade(10%));
+  &:hover {
+    background: color-mod($sasquatchSocks shade(20%));
+  }
+  &.cta {
+    @mixin cta-icon white;
+  }
+}
+
 .soft {
-  background: color-mod($fallingStar tint(10%));
+  background: color-mod($fallingStar tint(65%));
   border: 1px solid black;
   &:hover {
-    background: color-mod($fallingStar tint(20%));
+    background: color-mod($fallingStar tint(75%));
   }
   &.cta {
     @mixin cta-icon gray;

@@ -22,6 +22,11 @@ stories.add('Secondary', info(() => {
   return <Button kind='secondary' text={label} cta={cta} onClick={() => alert("I'm a button")} />
 }));
 
+stories.add('Danger', info(() => {
+  const label = text('Text', 'Ruh roh');
+  return <Button kind='danger' text={label} onClick={() => alert("This may have been a mistake")} />
+}));
+
 stories.add('Soft', info(() => {
   const label = text('Text', 'Click me');
   const cta = boolean('Call to Action', false);
@@ -32,7 +37,6 @@ stories.add('Custom', info(() => {
   const label = text('Text', 'Customize me');
   const cta = boolean('Call to Action', false);
   const color = text('Text Color', 'white');
-  console.log(colorNames)
   const selectBackground = select('Color Palette', colorNames, 'spiroBlue');
   const customBackground = text('Custom Background', null);
   const border = boolean('Border', false);

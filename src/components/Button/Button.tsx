@@ -11,7 +11,7 @@ export interface IButtonPropTypes {
   onClick?: React.MouseEventHandler<any>; // can we add things here
   /** Which style should the button have */
   /** @default primary */
-  kind?: 'primary'| 'secondary' | 'soft';
+  kind?: 'primary'| 'secondary' | 'danger' | 'soft';
   /** Include a Call-to-Action arrow? */
   /** @default false*/
   cta?: boolean;
