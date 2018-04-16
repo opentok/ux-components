@@ -2,8 +2,6 @@
 ![logo](./tokbox-logo.png)
 
 # UX Components
-[![license](https://img.shields.io/github/license/opentok/opentok-network-test-js.svg)](https://github.com/opentok/opentok-network-test-js/blob/master/CONTRIBUTING.md)
-
 
 OpenTok UX Components are built with:
 
