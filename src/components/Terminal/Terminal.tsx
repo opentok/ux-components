@@ -37,7 +37,7 @@ export default function Terminal({
         <pre >
           {
             content.map(({type, text}) =>
-              <code className={classNames(styles.line)}>
+              <code className={styles.line}>
                 <span className={styles[type]}>{text}</span>
               </code>
             )

@@ -54,7 +54,7 @@ stories.add('Link', info(() => {
   const href = text('Href', 'https://tokbox.com');
   const kinds = { primary: 'primary', secondary: 'secondary', soft: 'soft' };
   const kind = select('Kind', kinds, 'primary');
-  return <Button kind={kind} text={label} href={href} target="_blank" cta className="timtam" />
+  return <Button kind={kind} text={label} href={href} target="_blank" cta />
 }));
 
 
