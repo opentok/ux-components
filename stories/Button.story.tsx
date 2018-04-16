@@ -50,12 +50,11 @@ stories.add('Custom', info(() => {
 }));
 
 stories.add('Link', info(() => {
-  const label = text('Text', 'Click me');
+  const label = text('Text', 'Go Home');
   const href = text('Href', 'https://tokbox.com');
   const kinds = { primary: 'primary', secondary: 'secondary', soft: 'soft' };
   const kind = select('Kind', kinds, 'primary');
-  const cta = boolean('Call to Action', false);
-  return <Button kind={kind} text={label} href={href} target="_blank" cta={cta} className="timtam" />
+  return <Button kind={kind} text={label} href={href} target="_blank" cta className="timtam" />
 }));
 
 

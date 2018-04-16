@@ -40,7 +40,7 @@ export default function Button({
   href,
   link = false,
   target,
-  className,
+  className = '',
   disabled = false,
 }: IButtonPropTypes) {
   if (!!link && !href) {
@@ -50,7 +50,7 @@ export default function Button({
     styles.btn,
     styles[kind] || '',
     { [styles['cta']]: cta },
-    className || '',
+    className,
   )
   if (href) {
     if (link) {
