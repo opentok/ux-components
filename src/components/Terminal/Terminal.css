@@ -15,25 +15,12 @@ $borderRadius: 6px;
   flex-direction: column;
   box-shadow:0 2px 6px 1px rgba(0, 0, 0, .25);
   border-radius: $borderRadius;
-  font-family: monospace;
   position: relative;
   background-color: $fallingStar;
-
+  width:$mediumTerminalWidth;
+  height: $mediumTerminalHeight;
   * {
     box-sizing: border-box;
-  }
-
-  &.small {
-    width: $smallTerminalWidth;
-    height: $smallTerminalHeight;
-  }
-  &.medium {
-    width: $mediumTerminalWidth;
-    height: $mediumTerminalHeight;
-  }
-  &.large {
-    width: $largeTerminalWidth;
-    height: $largeTerminalHeight;
   }
 }
 
@@ -65,7 +52,7 @@ $borderRadius: 6px;
 .content {
   width: 100%;
   background-color: black;
-  padding: 5px 10px;
+  padding: 5px 15px;
   border-radius: 0 0 $borderRadius $borderRadius;
   flex-grow: 1;
   overflow: scroll;
@@ -81,9 +68,13 @@ $borderRadius: 6px;
       content: '# ';
       position: relative;
     }
+    &.highlight {
+      color: $sweetGarden;
+    }
   }
   .code {
     color: white;
+    font-family: 'Inconsolata', monospace;
     &:before {
       content: '$ ';
       position: relative;

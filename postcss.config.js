@@ -19,6 +19,9 @@ module.exports = {
           '300': ['woff, woff2'],
           '400': ['woff, woff2'],
           '700': ['woff, woff2']
+        },
+        'Inconsolata': {
+          '400': ['woff, woff2'],
         }
       },
     }
