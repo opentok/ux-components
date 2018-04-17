@@ -31,12 +31,11 @@ const uxComponentsContent: ITerminalContent[] = [
   { type: 'comment',  text: 'UX Components Storybook running at localhost:6006 . . .', highlight: true },
 ];
 
-stories.add('Run Storybook', info(() => {
+stories.add('Content', info(() => {
   return <Terminal content={uxComponentsContent} />
 }));
 
-
-stories.add('Run Storybook (Active)', info(() => {
+stories.add('Active', info(() => {
   return <Terminal content={uxComponentsContent} active />
 }));
 

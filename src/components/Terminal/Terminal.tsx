@@ -31,9 +31,10 @@ export interface ITerminalState {
 export default class Terminal extends Component {
   props: ITerminalPropTypes;
   state: ITerminalState;
+  static emptyLine: ITerminalContent = { type: 'code', text: '_' };
   constructor(props: ITerminalPropTypes) {
     super(props);
-    const content = props.content || [{ type: 'code', text: '_' }]
+    const content = props.content || [Terminal.emptyLine];
     this.state = {
       content,
       displayedContent: props.active ? [] : content,
@@ -51,14 +52,19 @@ export default class Terminal extends Component {
     const { content, displayedContent } = this.state;
     const { text } = content[lineIndex];
     const nextChar = text[charIndex];
+    const lastLine = displayedContent[displayedContent.length - 1];
     if (nextChar) {
-      const lastLine = displayedContent[displayedContent.length - 1];
-      const updatedLine = {...lastLine, text: `${lastLine.text}${text[charIndex]}` };
+      const updatedLine = {...lastLine, text: `${lastLine.text.slice(0, -1)}${text[charIndex]}_` };
       this.setState({
         displayedContent: [...displayedContent.slice(0, -1), updatedLine]
       }, () => setTimeout(() => this.typeNextLine(lineIndex, charIndex + 1), 50));
     } else {
-      setTimeout(() => this.displayNextLine(lineIndex + 1), 500);
+      this.setState({
+        displayedContent: [
+          ...displayedContent.slice(0, -1),
+          { ...lastLine, text: lastLine.text.slice(0, -1) }
+        ]
+      }, () => setTimeout(() => this.displayNextLine(lineIndex + 1), 500));
     }
   }
 
@@ -74,9 +80,8 @@ export default class Terminal extends Component {
       }
       if (type === 'code') {
         this.setState({
-          displayedContent: [...displayedContent, { type: 'code', text: '' }]
+          displayedContent: [...displayedContent, Terminal.emptyLine]
         }, () => this.typeNextLine(lineIndex, 0));
-
       }
     }
   }
