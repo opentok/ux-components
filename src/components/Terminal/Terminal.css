@@ -1,0 +1,83 @@
+@import "../../styles/colors.css";
+@import "../../styles/layout.css";
+
+
+$borderRadius: 6px;
+$defaultTerminalHeight: 400px;
+$defaultTerminalWidth: 600px;
+
+.terminal {
+  @mixin centerContent;
+  flex-direction: column;
+  box-shadow:0 2px 6px 1px rgba(0, 0, 0, .25);
+  border-radius: $borderRadius;
+  position: relative;
+  background-color: $fallingStar;
+  width:$defaultTerminalWidth;
+  height: $defaultTerminalHeight;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.header {
+  background-color: $lightGrey;
+  height: 2em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  .button {
+    height: .6em;
+    width: .6em;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    &:nth-child(1) {
+      background: color-mod($sasquatchSocks tint(20%));
+    }
+    &:nth-child(2) {
+      background: color-mod($honeyGlow tint(30%));
+    }
+    &:nth-child(3) {
+      background: $sweetGarden;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  background-color: black;
+  padding: 5px 15px;
+  border-radius: 0 0 $borderRadius $borderRadius;
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+.line {
+  display: block;
+  margin-bottom: 8px;
+  span {
+    font-size: 1.05em;
+    font-family: 'Inconsolata', monospace;
+    &.comment {
+      color: grey;
+      &:before {
+        content: '# ';
+        position: relative;
+      }
+      &.highlight {
+        color: $sweetGarden;
+      }
+    }
+    &.code {
+      color: white;
+      &:before {
+        content: '$ ';
+        position: relative;
+      }
+    }
+  }
+}
+
+

@@ -11,7 +11,7 @@ export interface IButtonPropTypes {
   onClick?: React.MouseEventHandler<any>; // can we add things here
   /** Which style should the button have */
   /** @default primary */
-  kind?: 'primary'| 'secondary' | 'soft';
+  kind?: 'primary'| 'secondary' | 'danger' | 'soft';
   /** Include a Call-to-Action arrow? */
   /** @default false*/
   cta?: boolean;
@@ -40,7 +40,7 @@ export default function Button({
   href,
   link = false,
   target,
-  className,
+  className = '',
   disabled = false,
 }: IButtonPropTypes) {
   if (!!link && !href) {
@@ -50,7 +50,7 @@ export default function Button({
     styles.btn,
     styles[kind] || '',
     { [styles['cta']]: cta },
-    className || '',
+    className,
   )
   if (href) {
     if (link) {

@@ -1,0 +1,8 @@
+@import "../../styles/colors.css";
+@import "../../styles/layout.css";
+
+.code {
+  @mixin centerContent;
+  font-family: monospace;
+  background-color: $fallingStar;
+}
