@@ -16,7 +16,7 @@ export interface ITerminalPropTypes {
   /** Text to display */
   content?: ITerminalContent[];
   /** Should the terminal update in real-time? */
-  live?: boolean;
+  active?: boolean;
   /** Additional styles to apply */
   style?: { [key: string]: string };
   /** Additional className to apply */
@@ -26,9 +26,6 @@ export interface ITerminalPropTypes {
 export interface ITerminalState {
   content: ITerminalContent[];
   displayedContent: ITerminalContent[];
-  currentLine: number;
-  currentCharacter: number;
-  allContentDisplayed: boolean;
 }
 
 export default class Terminal extends Component {
@@ -39,64 +36,48 @@ export default class Terminal extends Component {
     const content = props.content || [{ type: 'code', text: '_' }]
     this.state = {
       content,
-      displayedContent: props.live ? [] : content,
-      currentLine: 0,
-      currentCharacter: 0,
-      allContentDisplayed: false,
+      displayedContent: props.active ? [] : content,
     }
-    this.typeNextChar = this.typeNextChar.bind(this);
+    this.typeNextLine = this.typeNextLine.bind(this);
     this.displayNextLine = this.displayNextLine.bind(this);
-    this.displayComment = this.displayComment.bind(this);
   }
   componentDidMount() {
-    if (this.props.live && this.state.content.length) {
-      setTimeout(this.displayNextLine, 2000);
+    if (this.props.active && this.state.content.length) {
+      setTimeout(this.displayNextLine, 1750);
     }
   }
 
-  displayComment() {
-    const { content, currentLine, currentCharacter, displayedContent } = this.state;
-    const comment = content[currentLine];
-    this.setState({
-      displayedContent: displayedContent.concat(comment),
-      currentLine: currentLine + 1,
-    }, () => setTimeout(this.displayNextLine, 500));
-  }
-
-  typeNextChar(): void {
-    const { content, currentLine, currentCharacter, displayedContent } = this.state;
-    const contentLine = content[currentLine];
-    const nextChar = contentLine.text[currentCharacter];
-    if (!nextChar) {
-      return this.setState({
-        currentLine: currentLine + 1,
-        currentCharacter: 0
-      }, () => setTimeout(this.displayNextLine, 500));
-    }
-
-    const isSpace = nextChar === ' ';
-    const nextCharIndex = currentCharacter + 1;
-    return this.setState({
-      displayedContent: [
-        ...displayedContent.slice(0, 1),
-        { ...contentLine, text: `${contentLine.text.slice(0, currentCharacter + 1)}` }
-      ],
-      currentCharacter: currentCharacter + 1
-    }, () => setTimeout(this.typeNextChar, 75));
-  }
-
-  displayNextLine() {
-    const { content, currentLine, displayedContent } = this.state;
-    if (currentLine < content.length) {
-      const lineType = content[currentLine].type;
-      if (lineType === 'code') {
-        this.typeNextChar();
-      }
-      if (lineType === 'comment') {
-        this.displayComment();
-      }
+  typeNextLine(lineIndex: number, charIndex: number) {
+    const { content, displayedContent } = this.state;
+    const { text } = content[lineIndex];
+    const nextChar = text[charIndex];
+    if (nextChar) {
+      const lastLine = displayedContent[displayedContent.length - 1];
+      const updatedLine = {...lastLine, text: `${lastLine.text}${text[charIndex]}` };
+      this.setState({
+        displayedContent: [...displayedContent.slice(0, -1), updatedLine]
+      }, () => setTimeout(() => this.typeNextLine(lineIndex, charIndex + 1), 50));
     } else {
-      this.setState({ allContentDisplayed: true });
+      setTimeout(() => this.displayNextLine(lineIndex + 1), 500);
+    }
+  }
+
+  displayNextLine(lineIndex: number = 0) {
+    const { content, displayedContent } = this.state;
+    const line = content[lineIndex];
+    if (line) {
+      const { type, text } = line;
+      if (type === 'comment') {
+        this.setState({
+          displayedContent: [...displayedContent, line]
+        }, () => setTimeout(() => this.displayNextLine(lineIndex + 1), 500));
+      }
+      if (type === 'code') {
+        this.setState({
+          displayedContent: [...displayedContent, { type: 'code', text: '' }]
+        }, () => this.typeNextLine(lineIndex, 0));
+
+      }
     }
   }
 
@@ -106,19 +87,19 @@ export default class Terminal extends Component {
     return (
       <div className={classes} style={this.props.style} >
         <div className={styles.header}>
-          <span />
-          <span />
-          <span />
+          <span className={styles.button} />
+          <span className={styles.button} />
+          <span className={styles.button} />
         </div>
         <div className={styles.content}>
           <pre >
             {
-              displayedContent.map(({ type, text, highlight}, index) =>
-                <code key={index} className={styles.line}>
+              displayedContent.map(({ type, text, highlight }, index) =>
+                <div key={index} className={styles.line}>
                   <span className={classNames(styles[type], { [styles.highlight]: highlight })}>
                     {text}
                   </span>
-                </code>
+                </div>
               )
             }
           </pre>

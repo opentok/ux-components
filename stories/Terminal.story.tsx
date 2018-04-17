@@ -36,8 +36,8 @@ stories.add('Run Storybook', info(() => {
 }));
 
 
-stories.add('Run Storybook (Live)', info(() => {
-  return <Terminal content={uxComponentsContent} live />
+stories.add('Run Storybook (Active)', info(() => {
+  return <Terminal content={uxComponentsContent} active />
 }));
 
 

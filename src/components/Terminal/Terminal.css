@@ -1,14 +1,10 @@
 @import "../../styles/colors.css";
 @import "../../styles/layout.css";
 
-$smallTerminalHeight: 200px;
-$smallTerminalWidth: 400px;
-$mediumTerminalHeight: 400px;
-$mediumTerminalWidth: 600px;
-$largeTerminalHeight: 600px;
-$largeTerminalWidth: 900px;
-$headerHeight: 35px;
+
 $borderRadius: 6px;
+$defaultTerminalHeight: 400px;
+$defaultTerminalWidth: 600px;
 
 .terminal {
   @mixin centerContent;
@@ -17,8 +13,8 @@ $borderRadius: 6px;
   border-radius: $borderRadius;
   position: relative;
   background-color: $fallingStar;
-  width:$mediumTerminalWidth;
-  height: $mediumTerminalHeight;
+  width:$defaultTerminalWidth;
+  height: $defaultTerminalHeight;
   * {
     box-sizing: border-box;
   }
@@ -26,14 +22,14 @@ $borderRadius: 6px;
 
 .header {
   background-color: $lightGrey;
-  height: $headerHeight;
+  height: 2em;
   width: 100%;
   display: flex;
   align-items: center;
   padding-left: 5px;
-  span {
-    height: 10px;
-    width: 10px;
+  .button {
+    height: .6em;
+    width: .6em;
     border-radius: 50%;
     display: inline-block;
     margin: 0 5px;
@@ -61,23 +57,25 @@ $borderRadius: 6px;
 .line {
   display: block;
   margin-bottom: 8px;
-  font-size: 14px;
-  .comment {
-    color: grey;
-    &:before {
-      content: '# ';
-      position: relative;
-    }
-    &.highlight {
-      color: $sweetGarden;
-    }
-  }
-  .code {
-    color: white;
+  span {
+    font-size: 1.05em;
     font-family: 'Inconsolata', monospace;
-    &:before {
-      content: '$ ';
-      position: relative;
+    &.comment {
+      color: grey;
+      &:before {
+        content: '# ';
+        position: relative;
+      }
+      &.highlight {
+        color: $sweetGarden;
+      }
+    }
+    &.code {
+      color: white;
+      &:before {
+        content: '$ ';
+        position: relative;
+      }
     }
   }
 }
