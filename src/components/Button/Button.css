@@ -58,6 +58,15 @@
   }
 }
 
+.download {
+  color: white;
+  @mixin download-icon;
+  background: $oasisStream;
+  &:hover {
+    background: color-mod($oasisStream shade(10%));
+  }
+}
+
 .light {
   background: color-mod($fallingStar tint(65%));
   border: 1px solid black;
