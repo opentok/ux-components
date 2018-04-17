@@ -20,8 +20,10 @@ export default function Code({
 }: ICodePropTypes) {
   const classes = classNames(styles.code, className)
   return (
-    <pre className={classes} style={style}>
-      <code>{text}</code>
-    </pre>
+    <div className={classes} style={style} >
+      <pre>
+        <code>{text}</code>
+      </pre>
+    </div>
   );
 }

@@ -10,8 +10,38 @@ addDecorator(withKnobs);
 const stories = storiesOf('Code', module);
 const info = withInfo({ inline: false, source: true, styles });
 
-stories.add('Primary', info(() => {
-  const code = text('Code', 'I am some text to be displayed');
+stories.add('React', info(() => {
+  const code = text(
+  'Code',
+  `
+  import App from './components/App';
+  import { Code } from 'opentok-ux-components';
+
+  export default function Main () {
+  return (
+      <App>
+        <Code text={someCode} />
+      </App>
+    );
+  }
+  `
+);
+  return <Code text={code} />
+}));
+
+stories.add('Scala', info(() => {
+  const code = text(
+  'Code',
+  `
+import cats.FlatMap
+import cats.implicits._
+
+final case class Kleisli[F[_], A, B](run: A => F[B]) {
+  def compose[Z](k: Kleisli[F, Z, A])(implicit F: FlatMap[F]): Kleisli[F, Z, B] =
+    Kleisli[F, Z, B](z => k.run(z).flatMap(run))
+}
+  `
+);
   return <Code text={code} />
 }));
 
