@@ -17,6 +17,8 @@ export interface ITerminalPropTypes {
   content?: ITerminalContent[];
   /** Should the terminal update in real-time? */
   active?: boolean;
+  /** Re-run the terminal once all content displayed? */
+  repeat?: boolean;
   /** Additional styles to apply */
   style?: { [key: string]: string };
   /** Additional className to apply */
@@ -34,6 +36,9 @@ export default class Terminal extends Component {
   static emptyLine: ITerminalContent = { type: 'code', text: '_' };
   constructor(props: ITerminalPropTypes) {
     super(props);
+    if (!props.active && props.repeat) {
+      console.warn('Setting repeat to true has no effect in a non-active Terminal');
+    }
     const content = props.content || [Terminal.emptyLine];
     this.state = {
       content,
@@ -44,7 +49,7 @@ export default class Terminal extends Component {
   }
   componentDidMount() {
     if (this.props.active && this.state.content.length) {
-      setTimeout(this.displayNextLine, 1750);
+      setTimeout(this.displayNextLine, 1500);
     }
   }
 
@@ -82,6 +87,14 @@ export default class Terminal extends Component {
         this.setState({
           displayedContent: [...displayedContent, Terminal.emptyLine]
         }, () => this.typeNextLine(lineIndex, 0));
+      }
+    } else {
+      if (this.props.repeat) {
+        setTimeout(() => {
+          this.setState({
+            displayedContent: []
+          }, () => setTimeout(this.displayNextLine, 1500));
+        }, 4500);
       }
     }
   }

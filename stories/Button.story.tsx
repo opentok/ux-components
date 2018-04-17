@@ -27,6 +27,11 @@ stories.add('Danger', info(() => {
   return <Button kind='danger' text={label} onClick={() => alert("This may have been a mistake")} />
 }));
 
+stories.add('Download', info(() => {
+  const label = text('Text', 'Download');
+  return <Button kind='download' text={label} onClick={() => alert("Downloading some file . . .")} />
+}));
+
 stories.add('Light', info(() => {
   const label = text('Text', 'Click me');
   const cta = boolean('Call to Action', false);

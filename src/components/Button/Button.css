@@ -19,6 +19,7 @@
   text-decoration: none;
   font-style: normal;
   border-radius: 2px;
+  align-self: flex-start;
   a {
     color: inherit;
     text-decoration: none;
@@ -58,9 +59,18 @@
   }
 }
 
+.download {
+  color: white;
+  @mixin download-icon;
+  background: $oasisStream;
+  &:hover {
+    background: color-mod($oasisStream shade(10%));
+  }
+}
+
 .light {
   background: color-mod($fallingStar tint(65%));
-  border: 1px solid black;
+  border: 1px solid color-mod(black tint(50%));
   &:hover {
     background: color-mod($fallingStar tint(75%));
   }

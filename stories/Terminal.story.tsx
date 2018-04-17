@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
-import { select, number } from '@storybook/addon-knobs/react';
+import { select, number, boolean } from '@storybook/addon-knobs/react';
 import { wInfo, styles, colorPalette, colorNames } from "./utils";
 import { withInfo } from '@storybook/addon-info';
 import { Terminal, ITerminalContent } from '../src';
@@ -35,7 +35,8 @@ stories.add('Content', info(() => {
 }));
 
 stories.add('Active', info(() => {
-  return <Terminal content={uxComponentsContent} active />
+  const repeat = boolean('Repeat', false);
+  return <Terminal content={uxComponentsContent} active repeat={repeat} />
 }));
 
 
