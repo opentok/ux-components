@@ -69,7 +69,7 @@
 
 .light {
   background: color-mod($fallingStar tint(65%));
-  border: 1px solid black;
+  border: 1px solid color-mod(black tint(50%));
   &:hover {
     background: color-mod($fallingStar tint(75%));
   }
