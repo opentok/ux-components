@@ -3,8 +3,7 @@ import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { select, number } from '@storybook/addon-knobs/react';
 import { wInfo, styles, colorPalette, colorNames } from "./utils";
 import { withInfo } from '@storybook/addon-info';
-import { Terminal } from '../src';
-import { ITerminalContent } from '../src/components/Terminal/Terminal';
+import { Terminal, ITerminalContent } from '../src';
 
 const stories = storiesOf('Terminal', module);
 const info = withInfo({ inline: false, source: true, styles });

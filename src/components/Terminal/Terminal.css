@@ -57,6 +57,7 @@ $defaultTerminalWidth: 600px;
 .line {
   display: block;
   margin-bottom: 8px;
+  text-align: left;
   span {
     font-size: 1.05em;
     font-family: 'Inconsolata', monospace;

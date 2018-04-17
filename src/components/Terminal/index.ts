@@ -1,1 +1,1 @@
-export { default } from './Terminal';
+export { default, ITerminalContent } from './Terminal';
