@@ -27,10 +27,10 @@ stories.add('Danger', info(() => {
   return <Button kind='danger' text={label} onClick={() => alert("This may have been a mistake")} />
 }));
 
-stories.add('Soft', info(() => {
+stories.add('Light', info(() => {
   const label = text('Text', 'Click me');
   const cta = boolean('Call to Action', false);
-  return <Button kind='soft' text={label} cta={cta} onClick={() => alert("I'm a button")} />
+  return <Button kind='light' text={label} cta={cta} onClick={() => alert("I'm a button")} />
 }));
 
 stories.add('Custom', info(() => {
@@ -52,7 +52,7 @@ stories.add('Custom', info(() => {
 stories.add('Link', info(() => {
   const label = text('Text', 'Go Home');
   const href = text('Href', 'https://tokbox.com');
-  const kinds = { primary: 'primary', secondary: 'secondary', soft: 'soft' };
+  const kinds = { primary: 'primary', secondary: 'secondary', light: 'light' };
   const kind = select('Kind', kinds, 'primary');
   return <Button kind={kind} text={label} href={href} target="_blank" cta />
 }));

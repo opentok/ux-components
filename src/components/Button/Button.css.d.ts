@@ -4,4 +4,4 @@ export const primary: string;
 export const cta: string;
 export const secondary: string;
 export const danger: string;
-export const soft: string;
+export const light: string;

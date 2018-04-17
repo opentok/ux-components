@@ -58,7 +58,7 @@
   }
 }
 
-.soft {
+.light {
   background: color-mod($fallingStar tint(65%));
   border: 1px solid black;
   &:hover {
