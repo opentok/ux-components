@@ -1,3 +1,4 @@
+@import "../../styles/fonts.css";
 @import "../../styles/colors.css";
 @import "../../styles/layout.css";
 
@@ -59,8 +60,7 @@ $defaultTerminalWidth: 600px;
   margin-bottom: 8px;
   text-align: left;
   span {
-    font-size: 1.05em;
-    font-family: 'Inconsolata', monospace;
+    font-family: $codeFont;
     &.comment {
       color: grey;
       &:before {

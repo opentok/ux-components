@@ -20,7 +20,7 @@ module.exports = {
           '400': ['woff, woff2'],
           '700': ['woff, woff2']
         },
-        'Inconsolata': {
+        'Source-Code-Pro': {
           '400': ['woff, woff2'],
         }
       },

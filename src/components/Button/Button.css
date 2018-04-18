@@ -1,10 +1,11 @@
+@import "../../styles/fonts.css";
 @import "../../styles/colors.css";
 @import "../../styles/icons.css";
 @import "../../styles/layout.css";
 
 .btn {
   @mixin centerContent;
-  font-family: 'Nunito', sans-serif;
+  font-family: $primaryFont;
   padding: 0.75em 1.25em;
   border: none;
   font-size: inherit;
@@ -62,9 +63,9 @@
 .download {
   color: white;
   @mixin download-icon;
-  background: $oasisStream;
+  background: color-mod($oasisStream shade(10%));
   &:hover {
-    background: color-mod($oasisStream shade(10%));
+    background: color-mod($oasisStream shade(15%));
   }
 }
 
