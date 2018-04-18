@@ -5,4 +5,3 @@ export const cta: string;
 export const secondary: string;
 export const danger: string;
 export const download: string;
-export const light: string;
