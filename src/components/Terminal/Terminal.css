@@ -1,7 +1,5 @@
-@import "../../styles/fonts.css";
 @import "../../styles/colors.css";
 @import "../../styles/layout.css";
-
 
 $borderRadius: 6px;
 $defaultTerminalHeight: 400px;
@@ -60,7 +58,7 @@ $defaultTerminalWidth: 600px;
   margin-bottom: 8px;
   text-align: left;
   span {
-    font-family: $codeFont;
+    font-family: 'Source Code Pro', monospace;
     &.comment {
       color: grey;
       &:before {

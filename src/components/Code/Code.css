@@ -1,6 +1,6 @@
-@import "../../styles/fonts.css";
 @import "../../styles/colors.css";
 @import "../../styles/layout.css";
+@import "../../styles/fonts.css";
 
 $defaultWidth: 400px;
 
@@ -16,6 +16,6 @@ $defaultWidth: 400px;
   code {
     width: 100%;
     color: color-mod(black tint(40%));
-    font-family: $codeFont;
+    font-family: 'Source Code Pro', monospace;
   }
 }
