@@ -2,6 +2,8 @@ const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const excludePaths = ['./src/components/Font'];
+
 module.exports = {
   entry: "./src/index.ts",
   output: {
@@ -16,10 +18,12 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
+        exclude: excludePaths,
         loader: "awesome-typescript-loader",
       },
       {
         test: /\.css$/,
+        exclude: excludePaths,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -43,6 +47,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|gif|svg)$/,
+        exclude: excludePaths,
         use: [
           {
             loader: "file-loader",

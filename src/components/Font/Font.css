@@ -1,0 +1,27 @@
+.font {
+  margin-bottom: 10px;
+  &.nunito {
+    font-family: 'Nunito', sans-serif;
+    &.italic {
+      font-style: italic;
+    }
+  }
+  &.raleway {
+    font-family: 'Raleway', sans-serif;
+  }
+  &.code {
+    font-family: 'Source Code Pro', monospace;
+  }
+  &.extraLight{
+    font-weight: 200;
+  }
+  &.light{
+    font-weight: 300;
+  }
+  &.regular{
+    font-weight: 400;
+  }
+  &.bold{
+    font-weight: 700;
+  }
+}
