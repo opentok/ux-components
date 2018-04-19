@@ -5,13 +5,13 @@
 .btn {
   @mixin centerContent;
   font-family: 'Nunito', sans-serif;
+  font-weight: 200;
   padding: 0.75em 1.25em;
-  border: none;
+  border: 1px solid transparent;
   font-size: inherit;
   color: inherit;
   cursor: pointer;
   letter-spacing: 1px;
-  font-weight: 200;
   outline: none;
   text-align: center;
   position: relative;
@@ -38,13 +38,11 @@
 }
 
 .secondary {
-  color: white;
-  background-color: $shipsOfficer;
+  color: $clearChill;
+  background-color: white;
+  border-color: $clearChill;
   &:hover {
-    background-color: color-mod($shipsOfficer tint(10%));
-  }
-  &.cta {
-    @mixin cta-icon white;
+    background-color: color-mod($clearChill tint(95%));
   }
 }
 
@@ -62,19 +60,8 @@
 .download {
   color: white;
   @mixin download-icon;
-  background: $oasisStream;
+  background: color-mod($oasisStream shade(10%));
   &:hover {
-    background: color-mod($oasisStream shade(10%));
-  }
-}
-
-.light {
-  background: color-mod($fallingStar tint(65%));
-  border: 1px solid color-mod(black tint(50%));
-  &:hover {
-    background: color-mod($fallingStar tint(75%));
-  }
-  &.cta {
-    @mixin cta-icon gray;
+    background: color-mod($oasisStream shade(15%));
   }
 }

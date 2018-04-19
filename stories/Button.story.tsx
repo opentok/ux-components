@@ -18,8 +18,7 @@ stories.add('Primary', info(() => {
 
 stories.add('Secondary', info(() => {
   const label = text('Text', 'Click me');
-  const cta = boolean('Call to Action', false);
-  return <Button kind='secondary' text={label} cta={cta} onClick={() => alert("I'm a button")} />
+  return <Button kind='secondary' text={label} onClick={() => alert("I'm a button")} />
 }));
 
 stories.add('Danger', info(() => {
@@ -30,12 +29,6 @@ stories.add('Danger', info(() => {
 stories.add('Download', info(() => {
   const label = text('Text', 'Download');
   return <Button kind='download' text={label} onClick={() => alert("Downloading some file . . .")} />
-}));
-
-stories.add('Light', info(() => {
-  const label = text('Text', 'Click me');
-  const cta = boolean('Call to Action', false);
-  return <Button kind='light' text={label} cta={cta} onClick={() => alert("I'm a button")} />
 }));
 
 stories.add('Custom', info(() => {
