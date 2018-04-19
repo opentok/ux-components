@@ -1,19 +1,18 @@
 import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs/react';
-import { wInfo, styles, colorPalette, colorNames } from "./utils";
+import { colorPalette, colorNames } from "./utils";
 import { withInfo } from '@storybook/addon-info';
 import Font, { FontWeight } from '../src/components/Font/Font';
 
 addDecorator(withKnobs);
 const stories = storiesOf('Font', module);
 const fontStoryInfo = 'Font Components only exist to provide examples for Storybook';
-const info = withInfo({ inline: false, source: true, styles, text: fontStoryInfo });
 const extendedPalette = { ...{ black: '#000000' }, ...colorPalette };
 const extendedColorNames = { ...{ black: 'black' }, ...colorNames };
 const fontContainerStyle = { padding: '40px 10px' };
 
-stories.add('Nunito', info(() => {
+stories.add('Nunito', () => {
   const selectText = text('Text', 'The quick brown fox jumps over the lazy dog.');
   const selectColor = select('Color', extendedColorNames, 'black');
   const customColor = text('Custom Color', null);
@@ -32,9 +31,9 @@ stories.add('Nunito', info(() => {
     <Font text={sampleText} family="nunito" weight={weight} size={48} style={style}/>
   </div>
   )
-}));
+});
 
-stories.add('Raleway', info(() => {
+stories.add('Raleway', () => {
   const sampleText = text('Text', 'The quick brown fox jumps over the lazy dog.');
   const selectColor = select('Color', extendedColorNames, 'black');
   const customColor = text('Custom Color', null);
@@ -49,9 +48,9 @@ stories.add('Raleway', info(() => {
     <Font text={sampleText} family="raleway" weight={weight} size={48} style={style} />
   </div>
   )
-}));
+});
 
-stories.add('Source Code Pro', info(() => {
+stories.add('Source Code Pro', () => {
   const sampleText = text('Text', 'The quick brown fox jumps over the lazy dog.');
   const selectColor = select('Color', extendedColorNames, 'black');
   const customColor = text('Custom Color', null);
@@ -66,7 +65,6 @@ stories.add('Source Code Pro', info(() => {
     <Font text={sampleText} family="code" size={48} style={style} />
   </div>
   )
-}));
-
+});
 
 
