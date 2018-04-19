@@ -21,32 +21,14 @@ $pineGlade: #BDC581;
 $highligterLavender: #82589F;
 
 $lightGrey: #F7F7F7;
-$terminalRed: #FF795D;
 
+$grey1: color-mod(black tint(90%));
+$grey2: color-mod(black tint(80%));
+$grey3: color-mod(black tint(70%));
+$grey4: color-mod(black tint(60%));
+$grey5: color-mod(black tint(50%));
+$grey6: color-mod(black tint(40%));
+$grey7: color-mod(black tint(30%));
+$grey8: color-mod(black tint(20%));
+$grey9: color-mod(black tint(10%));
 
-/* $blue: #32c7ff;
-$tbBlue: #0099cb;
-$lighterTbBlue: color-mod($tbBlue tint(10%));
-$darkerTbBlue: color-mod($tbBlue shade(10%));
-$offWhite: #f8f8f8;
-$darkerWhite: color-mod($offWhite shade(5%));
-$activeBlueMask: #E3F4F9;
-$activeBlue: #0099CC;
-$activeBlueShade: #007BA3;
-$positiveGreen: #1BA71B;
-$positiveGreenShade: #127412;
-$negativeRed: #D0021B;
-$negativeRedShade: #910112;
-$mediumGrey: #314048;
-$grey: grey;
-$lightGrey: color-mod($grey tint(20%));
-$lighterGrey: color-mod($grey tint(40%));
-$darkGrey: #293840;
-$darkerGrey: #1E292E;
-$darkBlue: #003F5F;
-$bgGrey: #F0F0F0;
-$textGrey: #90A1A9;
-$navBlack: #1f1a17;
-$tbYellow: #f3a536;
-$tbPurple: #a25380;
-$paidGreen: #1ba71b; */

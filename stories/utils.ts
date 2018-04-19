@@ -56,7 +56,7 @@ export const styles = {
   }
 };
 
-export const colorPalette = {
+export const colorPalette: { [key: string]: string } = {
   orchidOrange: '#FEA47F',
   spiroBlue: '#25CCF7',
   honeyGlow: '#EAB543',
@@ -77,6 +77,18 @@ export const colorPalette = {
   sasquatchSocks: '#FC427B',
   pineGlade: '#BDC581',
   highligterLavender: '#82589F',
+};
+
+export const greyPalette: { [key: string]: string } = {
+  grey1: '#e6e6e6',
+  grey2: '#cccccc',
+  grey3: '#b3b3b3',
+  grey4: '#999999',
+  grey5: '#808080',
+  grey6: '#4d4d4d',
+  grey7: '#4d4d4d',
+  grey8: '#333333',
+  grey9: '#1a1a1a',
 };
 
 export const colorNames = Object.keys(colorPalette).reduce((acc, color) => ({...acc, [color]: color }), {})

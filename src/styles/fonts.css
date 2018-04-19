@@ -1,3 +1,9 @@
+/* :root {
+  --font-nunito: 'Nunito', sans-serif;
+  --font-raleway: 'Raleway', sans-serif;
+  --font-code: 'Source Code Pro', monospace;
+} */
+
 @font-face {
   font-family: Nunito;
   font-style: normal;
