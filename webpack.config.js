@@ -2,7 +2,7 @@ const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const excludePaths = ['./src/components/Font'];
+const excludePaths = ['./src/components/Typeface'];
 
 module.exports = {
   entry: "./src/index.ts",

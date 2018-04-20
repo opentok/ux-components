@@ -5,8 +5,7 @@ import { withKnobs, select } from '@storybook/addon-knobs/react';
 addDecorator(withKnobs);
 
 function loadStories() {
-    require('./welcomeStory');
-    require('../stories');
+  require('../stories');
 }
 
 configure(loadStories, module);

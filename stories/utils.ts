@@ -27,8 +27,9 @@ export const styles = {
     fontFamily: "sans-serif",
     fontWeight: "300",
     backgroundColor: "#eee",
-    padding: "10px",
+    padding: "10px 20px",
     lineHeight: "2",
+    borderRadius: "3px",
     h1: {
       fontFamily: "sans-serif",
       fontWeight: "300",

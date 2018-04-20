@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { CSSProperties } from 'react';
 import classNames from 'classnames';
-import * as styles from './Font.css';
+import * as styles from './Typeface.css';
 
 /**
  * This component is only used to provide font samples in Storybook
@@ -10,7 +10,7 @@ import * as styles from './Font.css';
 
 export type FontWeight = 'extraLight' | 'light' | 'regular' | 'bold';
 
-export interface IFontPropTypes {
+export interface ITypefacePropTypes {
   /** Text to display */
   text: string;
   /** The font family to use */
@@ -19,10 +19,6 @@ export interface IFontPropTypes {
   weight?: FontWeight;
   /** The font weight to use */
   size?: number;
-  // /** Additional styles to apply */
-  // color?: string;
-  // /** Should the font be italic */
-  // italic?: boolean;
   /** Additional styles to apply */
   style?: { [key: string]: string };
 
@@ -34,9 +30,9 @@ export default function Font({
   weight = 'regular',
   size,
   style = {},
-}: IFontPropTypes) {
+}: ITypefacePropTypes) {
   const classes = classNames(
-    styles.font,
+    styles.typeface,
     styles[family],
     styles[weight],
   )
