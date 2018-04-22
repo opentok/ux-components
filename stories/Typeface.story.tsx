@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs/react';
-import { colorPalette, colorNames } from "./utils";
+import { colorPalette, colorNames, greyPalette, greyNames } from "./utils";
 import { withInfo } from '@storybook/addon-info';
 import Typeface, { FontWeight } from '../src/components/Typeface/Typeface';
 
 addDecorator(withKnobs);
 const stories = storiesOf('Typeface', module);
-const extendedPalette = { ...{ black: '#000000' }, ...colorPalette };
-const extendedColorNames = { ...{ black: 'black' }, ...colorNames };
+const extendedPalette = { ...{ Black: '#000000' }, ...greyPalette, ...colorPalette };
+const extendedColorNames = { ...{ Black: 'Black' },  ...greyNames, ...colorNames };
 const typefaceContainerStyle = { padding: '40px 10px' };
 
 stories.add('Nunito', () => {
   const selectText = text('Text', 'The quick brown fox jumps over the lazy dog.');
-  const selectColor = select('Color', extendedColorNames, 'black');
+  const selectColor = select('Color', extendedColorNames, 'Black');
   const customColor = text('Custom Color', null);
   const selectWeight = select('Weight', ['extraLight', 'light', 'regular', 'bold'], 'regular') as FontWeight;
   const color = customColor || extendedPalette[selectColor];
@@ -34,7 +34,7 @@ stories.add('Nunito', () => {
 
 stories.add('Raleway', () => {
   const sampleText = text('Text', 'The quick brown fox jumps over the lazy dog.');
-  const selectColor = select('Color', extendedColorNames, 'black');
+  const selectColor = select('Color', extendedColorNames, 'Black');
   const customColor = text('Custom Color', null);
   const weight = select('Weight', ['light', 'regular', 'bold'], 'regular') as FontWeight;
   const style = { color: customColor || extendedPalette[selectColor] };
@@ -51,7 +51,7 @@ stories.add('Raleway', () => {
 
 stories.add('Source Code Pro', () => {
   const sampleText = text('Text', 'The quick brown fox jumps over the lazy dog.');
-  const selectColor = select('Color', extendedColorNames, 'black');
+  const selectColor = select('Color', extendedColorNames, 'Black');
   const customColor = text('Custom Color', null);
   const color = customColor || extendedPalette[selectColor];
   const style = { color: customColor || extendedPalette[selectColor] };

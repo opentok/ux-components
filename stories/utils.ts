@@ -92,6 +92,7 @@ export const greyPalette: { [key: string]: string } = {
   'Grey 9': '#1a1a1a',
 };
 
-export const colorNames = Object.keys(colorPalette).reduce((acc, color) => ({...acc, [color]: color }), {})
+export const colorNames = Object.keys(colorPalette).reduce((acc, color) => ({...acc, [color]: color }), {});
+export const greyNames = Object.keys(greyPalette).reduce((acc, color) => ({...acc, [color]: color }), {});
 
 export const wInfo = (text: string) => withInfo({ inline: false, source: true, styles, text, header: true });
