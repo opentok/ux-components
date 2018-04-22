@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs/react';
-import { wInfo, styles, colorPalette, colorNames } from "./utils";
+import { wInfo, infoStyles } from "./utils";
+import { colorPalette, colorNames } from "./styles/colors";
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '../src';
 
-addDecorator(withKnobs);
 
 const stories = storiesOf('Button', module);
-const info = withInfo({ inline: false, source: true, styles });
+const info = withInfo({ inline: false, source: true, styles: infoStyles });
+addDecorator(withKnobs);
 
 stories.add('Primary', info(() => {
   const label = text('Text', 'Click me');
@@ -50,7 +51,7 @@ stories.add('Custom', info(() => {
 stories.add('Link', info(() => {
   const label = text('Text', 'Go Home');
   const href = text('Href', 'https://tokbox.com');
-  const kinds = { primary: 'primary', secondary: 'secondary', light: 'light' };
+  const kinds = { primary: 'primary', secondary: 'secondary' };
   const kind = select('Kind', kinds, 'primary');
   return <Button kind={kind} text={label} href={href} target="_blank" cta />
 }));

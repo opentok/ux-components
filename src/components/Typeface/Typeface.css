@@ -1,4 +1,4 @@
-.font {
+.typeface {
   margin-bottom: 10px;
   &.nunito {
     font-family: 'Nunito', sans-serif;
@@ -12,16 +12,16 @@
   &.code {
     font-family: 'Source Code Pro', monospace;
   }
-  &.extraLight{
+  &.extraLight {
     font-weight: 200;
   }
-  &.light{
+  &.light {
     font-weight: 300;
   }
-  &.regular{
+  &.regular {
     font-weight: 400;
   }
-  &.bold{
+  &.bold {
     font-weight: 700;
   }
 }

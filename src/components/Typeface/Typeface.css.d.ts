@@ -1,5 +1,5 @@
 /* This file is generated during the webpack build. Please do not edit/remove. */
-export const font: string;
+export const typeface: string;
 export const nunito: string;
 export const italic: string;
 export const raleway: string;
