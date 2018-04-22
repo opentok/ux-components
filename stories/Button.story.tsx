@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs/react';
-import { wInfo, styles, colorPalette, colorNames } from "./utils";
+import { wInfo, infoStyles } from "./utils";
+import { colorPalette, colorNames } from "./styles/colors";
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '../src';
 
-addDecorator(withKnobs);
 
 const stories = storiesOf('Button', module);
-const info = withInfo({ inline: false, source: true, styles });
+const info = withInfo({ inline: false, source: true, styles: infoStyles });
+addDecorator(withKnobs);
 
 stories.add('Primary', info(() => {
   const label = text('Text', 'Click me');

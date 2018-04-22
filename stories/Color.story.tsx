@@ -2,25 +2,17 @@ import * as React from 'react';
 import copy from 'copy-to-clipboard';
 import swal from 'sweetalert2';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
-import { wInfo, styles, colorPalette, greyPalette } from './utils';
-
+import { wInfo, infoStyles } from './utils';
+import { colorPalette, greyPalette } from './styles/colors';
+import { layout, font } from './styles';
 
 /** Style Rules */
-const flex = { display: 'flex' };
-const flexCenter = { ...flex, justifyContent: 'center', alignItems: 'center' };
-const flexEnd = { ...flex, justifyContent: 'flex-end', alignItems: 'flex-end' };
-const flexCol = { ...flex, flexDirection: 'column' as 'column', justifyContent: 'center' };
-const flexWrap = { ...flex, flexWrap: 'wrap' as 'wrap' };
-const ralewayFont = { fontFamily: 'Raleway' };
-const nunitoFont = { fontFamily: 'Nunito', fontWeight: 300 as 300 };
-const greyText = { color: greyPalette['Grey 4'] };
-const whiteText = { color: 'white' };
-const greyLabel = { ...greyText, fontStyle: 'italic' as 'italic', fontSize: '.8em' };
+export const greyLabel = { ...font.grey, ...font.italic, fontSize: '.8em' };
+export const headerStyle = { ...font.raleway, textAlign: 'center' as 'center', ...font.weight300 };
 const sampleStyle = { width: '20%' };
-const headerStyle = { ...ralewayFont, textAlign: 'center' as 'center', fontWeight: 300 as 300 };
 const colorStyle = {
-  ...flexCenter,
-  ...flexEnd,
+  ...layout.flexCenter,
+  ...layout.flexEnd,
   width: '100%',
   height: '135px',
   borderRadius: '0',
@@ -29,7 +21,6 @@ const colorStyle = {
   textTransform: 'uppercase' as 'uppercase',
   boxSizing: 'border-box' as 'border-box',
   padding: '5px',
-
 };
 
 /** Stories */
@@ -58,8 +49,8 @@ const onCopy = (color: string): void => {
 stories.add('Palette', () => (
   <div id="paletteContainer" style={{ padding: '10px' }}>
     <h1 style={{ ...headerStyle, marginBottom: '5px' }} >Color Palette</h1>
-    <h4 style={{ ...headerStyle, fontStyle: 'italic', ...greyText, marginTop: '5px' }} >Click to Copy Color Code</h4>
-    <div style={flexWrap} >
+    <h4 style={{ ...headerStyle, fontStyle: 'italic', ...font.grey, marginTop: '5px' }} >Click to Copy Color Code</h4>
+    <div style={layout.flexWrap} >
       {
         Object.keys(colorPalette).map(colorName =>
           <div style={sampleStyle} key={colorName}>
@@ -67,7 +58,7 @@ stories.add('Palette', () => (
               style={{ ...colorStyle, ...{ backgroundColor: colorPalette[colorName] } }}
               onClick={() => onCopy(colorPalette[colorName])}
             >
-              <span style={{ ...nunitoFont, ...whiteText }}>{`${colorName}`}</span>
+              <span style={{ ...font.nunito, ...font.white }}>{`${colorName}`}</span>
             </div>
           </div>
         )
@@ -82,8 +73,8 @@ stories.add('Palette', () => (
 stories.add('Grey', () => (
   <div style={{ padding: '10px' }}>
     <h1 style={{ ...headerStyle, marginBottom: '5px' }} >Shades of Grey</h1>
-    <h4 style={{ ...headerStyle, fontStyle: 'italic', ...greyText, marginTop: '5px' }} >Click to Copy Color Code</h4>
-    <div style={flexWrap} >
+    <h4 style={{ ...headerStyle, fontStyle: 'italic', ...font.grey, marginTop: '5px' }} >Click to Copy Color Code</h4>
+    <div style={layout.flexWrap} >
       {
         Object.keys(greyPalette).map(colorName =>
           <div style={sampleStyle} key={colorName}>
@@ -91,7 +82,7 @@ stories.add('Grey', () => (
               style={{ ...colorStyle, ...{ backgroundColor: greyPalette[colorName] } }}
               onClick={() => onCopy(greyPalette[colorName])}
             >
-              <span style={{ ...nunitoFont, ...whiteText }}>{`${colorName}`}</span>
+              <span style={{ ...font.nunito, ...font.white }}>{`${colorName}`}</span>
             </div>
           </div>
         )
@@ -99,5 +90,3 @@ stories.add('Grey', () => (
     </div>
   </div>
 ));
-
-
