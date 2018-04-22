@@ -24,7 +24,7 @@ export interface ITypefacePropTypes {
 
 }
 
-export default function Font({
+export default function Typeface({
   text,
   family = 'nunito',
   weight = 'regular',

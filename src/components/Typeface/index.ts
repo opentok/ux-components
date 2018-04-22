@@ -1,1 +1,1 @@
-export { default, IFontPropTypes, Typeface } from './Typeface';
+export { default, ITypefacePropTypes, FontWeight } from './Typeface';
