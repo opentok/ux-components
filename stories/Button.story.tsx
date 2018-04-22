@@ -50,7 +50,7 @@ stories.add('Custom', info(() => {
 stories.add('Link', info(() => {
   const label = text('Text', 'Go Home');
   const href = text('Href', 'https://tokbox.com');
-  const kinds = { primary: 'primary', secondary: 'secondary', light: 'light' };
+  const kinds = { primary: 'primary', secondary: 'secondary' };
   const kind = select('Kind', kinds, 'primary');
   return <Button kind={kind} text={label} href={href} target="_blank" cta />
 }));
