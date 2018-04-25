@@ -6,5 +6,5 @@ export {
   Button,
   Code,
   Terminal,
-  ITerminalContent
+  ITerminalContent,
 };

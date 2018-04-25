@@ -2,9 +2,9 @@ import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { select, number, boolean } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
-import { wInfo, infoStyles } from './utils';
-import { colorPalette, colorNames } from './styles/colors';
-import { Terminal, ITerminalContent } from '../src';
+import { wInfo, infoStyles } from '../utils';
+import { colorPalette, colorNames } from '../styles/colors';
+import { Terminal, ITerminalContent } from '../../src';
 
 const stories = storiesOf('Terminal', module);
 const info = withInfo({ inline: false, source: true, styles: infoStyles });
