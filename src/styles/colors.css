@@ -20,6 +20,7 @@
   --color-sasquatchSocks: #FC427B;
   --color-pineGlade: #BDC581;
   --color-highligterLavender: #82589F;
+  --color-grey0: color-mod(grey tint(90%));
   --color-grey1: color-mod(grey tint(80%));
   --color-grey2: color-mod(grey tint(60%));
   --color-grey3: color-mod(grey tint(40%));
@@ -29,4 +30,5 @@
   --color-grey7: color-mod(grey shade(40%));
   --color-grey8: color-mod(grey shade(60%));
   --color-grey9: color-mod(grey shade(80%));
+  --color-grey10: color-mod(grey shade(90%));
 }

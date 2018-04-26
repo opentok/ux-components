@@ -20,7 +20,7 @@ $defaultTerminalWidth: 600px;
 }
 
 .header {
-  background-color: #F7F7F7;
+  background-color: var(--color-grey1);
   height: 2em;
   width: 100%;
   display: flex;

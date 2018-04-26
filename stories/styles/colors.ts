@@ -24,6 +24,7 @@ export const colorPalette: { [key: string]: string } = {
 export const colorNames = Object.keys(colorPalette).reduce((acc, color) => ({...acc, [color]: color }), {});
 
 export const greyPalette: { [key: string]: string } = {
+  'Grey 0': 'rgb(242, 242, 242)',
   'Grey 1': 'rgb(230, 230, 230)',
   'Grey 2': 'rgb(204, 204, 204)',
   'Grey 3': 'rgb(179, 179, 179)',
@@ -33,6 +34,7 @@ export const greyPalette: { [key: string]: string } = {
   'Grey 7': 'rgb(77, 77, 77)',
   'Grey 8': 'rgb(51, 51, 51)',
   'Grey 9': 'rgb(26, 26, 26)',
+  'Grey 10': 'rgb(13, 13, 13)',
 };
 
 
