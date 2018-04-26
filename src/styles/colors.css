@@ -20,13 +20,13 @@
   --color-sasquatchSocks: #FC427B;
   --color-pineGlade: #BDC581;
   --color-highligterLavender: #82589F;
-  --color-grey1: color-mod(black tint(90%));
-  --color-grey2: color-mod(black tint(80%));
-  --color-grey3: color-mod(black tint(70%));
-  --color-grey4: color-mod(black tint(60%));
-  --color-grey5: color-mod(black tint(50%));
-  --color-grey6: color-mod(black tint(40%));
-  --color-grey7: color-mod(black tint(30%));
-  --color-grey8: color-mod(black tint(20%));
-  --color-grey9: color-mod(black tint(10%));
+  --color-grey1: color-mod(grey tint(80%));
+  --color-grey2: color-mod(grey tint(60%));
+  --color-grey3: color-mod(grey tint(40%));
+  --color-grey4: color-mod(grey tint(20%));
+  --color-grey5: grey;
+  --color-grey6: color-mod(grey shade(20%));
+  --color-grey7: color-mod(grey shade(40%));
+  --color-grey8: color-mod(grey shade(60%));
+  --color-grey9: color-mod(grey shade(80%));
 }
