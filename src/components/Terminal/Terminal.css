@@ -1,5 +1,5 @@
-@import "../../styles/colors.css";
 @import "../../styles/layout.css";
+@import "../../styles/colors.css";
 
 $borderRadius: 6px;
 $defaultTerminalHeight: 400px;
@@ -11,7 +11,7 @@ $defaultTerminalWidth: 600px;
   box-shadow:0 2px 6px 1px rgba(0, 0, 0, .25);
   border-radius: $borderRadius;
   position: relative;
-  background-color: $fallingStar;
+  background-color: var(--color-fallingStar);
   width:$defaultTerminalWidth;
   height: $defaultTerminalHeight;
   * {
@@ -20,7 +20,7 @@ $defaultTerminalWidth: 600px;
 }
 
 .header {
-  background-color: $lightGrey;
+  background-color: #F7F7F7;
   height: 2em;
   width: 100%;
   display: flex;
@@ -33,13 +33,13 @@ $defaultTerminalWidth: 600px;
     display: inline-block;
     margin: 0 5px;
     &:nth-child(1) {
-      background: color-mod($sasquatchSocks tint(20%));
+      background-color: color-mod(var(--color-sasquatchSocks) tint(20%));
     }
     &:nth-child(2) {
-      background: color-mod($honeyGlow tint(30%));
+      background-color: color-mod(var(--color-honeyGlow) tint(30%));
     }
     &:nth-child(3) {
-      background: $sweetGarden;
+      background-color: var(--color-sweetGarden);
     }
   }
 }
@@ -66,7 +66,7 @@ $defaultTerminalWidth: 600px;
         position: relative;
       }
       &.highlight {
-        color: $sweetGarden;
+        color: var(--color-sweetGarden);
       }
     }
     &.code {

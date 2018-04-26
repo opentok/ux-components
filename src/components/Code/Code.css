@@ -15,7 +15,7 @@ $defaultWidth: 400px;
   box-sizing: border-box;
   code {
     width: 100%;
-    color: color-mod(black tint(40%));
+    color: var(--color-grey6);
     font-family: 'Source Code Pro', monospace;
   }
 }
