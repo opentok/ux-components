@@ -2,9 +2,9 @@ import * as React from 'react';
 import copy from 'copy-to-clipboard';
 import swal from 'sweetalert2';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
-import { wInfo, infoStyles } from './utils';
-import { colorPalette, greyPalette } from './styles/colors';
-import { layout, font } from './styles';
+import { wInfo, infoStyles } from '../utils';
+import { colorPalette, greyPalette } from '../styles/colors';
+import { layout, font } from '../styles';
 
 /** Style Rules */
 export const greyLabel = { ...font.grey, ...font.italic, fontSize: '.8em' };

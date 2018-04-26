@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs/react';
-import { colorPalette, colorNames, greyPalette, greyNames } from './styles/colors';
+import { colorPalette, colorNames, greyPalette, greyNames } from '../styles/colors';
 import { withInfo } from '@storybook/addon-info';
-import Typeface, { FontWeight } from '../src/components/Typeface/Typeface';
+import Typeface, { FontWeight } from '../../src/components/Typeface/Typeface';
 
 addDecorator(withKnobs);
 const stories = storiesOf('Typeface', module);

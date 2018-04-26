@@ -1,10 +1,11 @@
 @import "../../styles/colors.css";
-@import "../../styles/icons.css";
-@import "../../styles/layout.css";
+@import "../../styles/fonts.css";
+@import "../../styles/mixins/icons.css";
+@import "../../styles/mixins/layout.css";
 
 .btn {
   @mixin centerContent;
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-primary);
   font-weight: 200;
   padding: 0.75em 1.25em;
   border: 1px solid transparent;
@@ -28,29 +29,29 @@
 
 .primary {
   color: white;
-  background-color: $clearChill;
+  background-color: var(--color-clearChill);
   &.cta {
     @mixin cta-icon white;
   }
   &:hover {
-    background-color: color-mod($clearChill tint(10%));
+    background-color: color-mod(var(--color-clearChill) tint(10%));
   }
 }
 
 .secondary {
-  color: $clearChill;
+  color: var(--color-clearChill);
   background-color: white;
-  border-color: $clearChill;
+  border-color: var(--color-clearChill);
   &:hover {
-    background-color: color-mod($clearChill tint(95%));
+    background-color: color-mod(var(--color-clearChill) tint(95%));
   }
 }
 
 .danger {
   color: white;
-  background: color-mod($sasquatchSocks shade(10%));
+  background: color-mod(var(--color-sasquatchSocks) shade(10%));
   &:hover {
-    background: color-mod($sasquatchSocks shade(20%));
+    background: color-mod(var(--color-sasquatchSocks) shade(20%));
   }
   &.cta {
     @mixin cta-icon white;
@@ -60,8 +61,8 @@
 .download {
   color: white;
   @mixin download-icon;
-  background: color-mod($oasisStream shade(10%));
+  background: color-mod(var(--color-oasisStream) shade(10%));
   &:hover {
-    background: color-mod($oasisStream shade(15%));
+    background: color-mod(var(--color-oasisStream) shade(15%));
   }
 }

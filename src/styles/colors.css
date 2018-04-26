@@ -1,34 +1,34 @@
-/* https://flatuicolors.com/palette/in */
-$orchidOrange: #FEA47F;
-$spiroBlue: #25CCF7;
-$honeyGlow: #EAB543;
-$sweetGarden: #55E6C1;
-$fallingStar:#CAD3C8;
-$richGardenia: #F97F51;
-$clearChill: #1B9CFC;
-$whitePepper: #F8EFBA;
-$keppel: #58B19F;
-$shipsOfficer: #2C3A47;
-$fireyFuschia: #B33771;
-$bluebell: #3B3B98;
-$georgiaPeach: #FD7272;
-$oasisStream: #9AECDB;
-$brightUbe: #D6A2E8;
-$magenta: #6D214F;
-$navyBlue: #182C61;
-$sasquatchSocks: #FC427B;
-$pineGlade: #BDC581;
-$highligterLavender: #82589F;
-
-$lightGrey: #F7F7F7;
-
-$grey1: color-mod(black tint(90%));
-$grey2: color-mod(black tint(80%));
-$grey3: color-mod(black tint(70%));
-$grey4: color-mod(black tint(60%));
-$grey5: color-mod(black tint(50%));
-$grey6: color-mod(black tint(40%));
-$grey7: color-mod(black tint(30%));
-$grey8: color-mod(black tint(20%));
-$grey9: color-mod(black tint(10%));
-
+:root {
+  /* https://flatuicolors.com/palette/in */
+  --color-orchidOrange: #FEA47F;
+  --color-spiroBlue: #25CCF7;
+  --color-honeyGlow: #EAB543;
+  --color-sweetGarden: #55E6C1;
+  --color-fallingStar:#CAD3C8;
+  --color-richGardenia: #F97F51;
+  --color-clearChill: #1B9CFC;
+  --color-whitePepper: #F8EFBA;
+  --color-keppel: #58B19F;
+  --color-shipsOfficer: #2C3A47;
+  --color-fireyFuschia: #B33771;
+  --color-bluebell: #3B3B98;
+  --color-georgiaPeach: #FD7272;
+  --color-oasisStream: #9AECDB;
+  --color-brightUbe: #D6A2E8;
+  --color-magenta: #6D214F;
+  --color-navyBlue: #182C61;
+  --color-sasquatchSocks: #FC427B;
+  --color-pineGlade: #BDC581;
+  --color-highligterLavender: #82589F;
+  --color-grey0: color-mod(grey tint(90%));
+  --color-grey1: color-mod(grey tint(80%));
+  --color-grey2: color-mod(grey tint(60%));
+  --color-grey3: color-mod(grey tint(40%));
+  --color-grey4: color-mod(grey tint(20%));
+  --color-grey5: grey;
+  --color-grey6: color-mod(grey shade(20%));
+  --color-grey7: color-mod(grey shade(40%));
+  --color-grey8: color-mod(grey shade(60%));
+  --color-grey9: color-mod(grey shade(80%));
+  --color-grey10: color-mod(grey shade(90%));
+}

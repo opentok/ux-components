@@ -1,16 +1,18 @@
+@import "../../styles/fonts.css";
+
 .typeface {
   margin-bottom: 10px;
   &.nunito {
-    font-family: 'Nunito', sans-serif;
+    font-family: var(--font-primary);
     &.italic {
       font-style: italic;
     }
   }
   &.raleway {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-header);
   }
   &.code {
-    font-family: 'Source Code Pro', monospace;
+    font-family: var(--font-code);
   }
   &.extraLight {
     font-weight: 200;

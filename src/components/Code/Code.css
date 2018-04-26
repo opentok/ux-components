@@ -1,8 +1,5 @@
 @import "../../styles/colors.css";
-@import "../../styles/layout.css";
-@import "../../styles/fonts.css";
-
-$defaultWidth: 400px;
+@import "../../styles/mixins/layout.css";
 
 .code {
   text-align: left;
@@ -11,11 +8,11 @@ $defaultWidth: 400px;
   background-color: #f5f7f8;
   border-radius: 3px;
   border: 1px solid #ccc;
-  min-width: $defaultWidth;
-  box-sizing: border-box;
+  min-width: 400px;
+  @mixin borderBox;
   code {
     width: 100%;
-    color: color-mod(black tint(40%));
-    font-family: 'Source Code Pro', monospace;
+    color: var(--color-grey6);
+    font-family: var(--font-code);
   }
 }

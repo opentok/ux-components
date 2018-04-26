@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { addDecorator, setAddon, storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs/react';
-import { wInfo, infoStyles } from './utils';
-import { colorPalette, colorNames } from './styles/colors';
+import { wInfo, infoStyles } from '../utils';
+import { colorPalette, colorNames } from '../styles/colors';
 import { withInfo } from '@storybook/addon-info';
-import { Code } from '../src';
+import { Code } from '../../src';
 
 const stories = storiesOf('Welcome', module);
 const welcomeText = `
