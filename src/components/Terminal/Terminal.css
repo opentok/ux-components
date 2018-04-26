@@ -1,26 +1,24 @@
 @import "../../styles/layout.css";
 @import "../../styles/colors.css";
 
-$borderRadius: 6px;
-$defaultTerminalHeight: 400px;
-$defaultTerminalWidth: 600px;
 
 .terminal {
   @mixin centerContent;
+  --borderRadius: 6px;
   flex-direction: column;
   box-shadow:0 2px 6px 1px rgba(0, 0, 0, .25);
-  border-radius: $borderRadius;
+  border-radius: var(--borderRadius);
   position: relative;
   background-color: var(--color-fallingStar);
-  width:$defaultTerminalWidth;
-  height: $defaultTerminalHeight;
+  width: 400px;
+  height: 600px;
   * {
     box-sizing: border-box;
   }
 }
 
 .header {
-  background-color: var(--color-grey1);
+  background-color: var(--color-grey0);
   height: 2em;
   width: 100%;
   display: flex;
@@ -48,7 +46,7 @@ $defaultTerminalWidth: 600px;
   width: 100%;
   background-color: black;
   padding: 5px 15px;
-  border-radius: 0 0 $borderRadius $borderRadius;
+  border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   flex-grow: 1;
   overflow: scroll;
 }
