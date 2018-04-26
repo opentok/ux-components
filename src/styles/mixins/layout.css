@@ -1,0 +1,16 @@
+@define-mixin centerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@define-mixin borderBox {
+  box-sizing: border-box;
+}
+
+@define-mixin borderBoxAll {
+  @mixin borderBox;
+  * {
+    @mixin borderBox;
+  }
+}
